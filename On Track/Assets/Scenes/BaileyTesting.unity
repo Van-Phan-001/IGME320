@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f909ac5163fe9e645b0053a486472d67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slots: 4
+  numberOfSlots: 4
   sumHint: 0
   currentGuess: 01000000020000000300000004000000
 --- !u!4 &883247164
