@@ -51,6 +51,9 @@ public class GameManager : MonoBehaviour
 
         //Wizard Hint
         Debug.Log(WizardHint());
+
+        //Witch Hint
+        Debug.Log(WitchHint());
     }
 
     // Update is called once per frame
@@ -152,13 +155,12 @@ public class GameManager : MonoBehaviour
         }
         else if (numberOfCorrect == 1)
         {
-            result = "You currently have 1 correct rune.";
+            result = "You currently have 1 unique correct rune power.";
         }
         else
         {
-            // note: I see this being pretty poor wording.
-            // hopefully our textbox can pronounce why it doesn't give anything about position.
-            result = "You currently have " + numberOfCorrect + " correct runes.";
+            // note: Maybe this is how we should phrase it
+            result = "You currently have " + numberOfCorrect + " unique correct rune powers.";
         }
 
         return result;
@@ -173,5 +175,45 @@ public class GameManager : MonoBehaviour
         // give the player the hint based on generated position
         string result = "Ahhh... I see... Slot " + randomPosition + "'s correct rune power is " + answerKey[randomPosition - 1] + "!";
         return result;
+    }
+    // Tells you the number of positions that have too high and too low of a number.
+    string WitchHint()
+    {
+        // start 2 new integers to count number of too high and too low
+        string result;
+        int numberTooHigh = 0;
+        int numberTooLow = 0;
+        for (int i = 0; i < numberOfSlots; i++)
+        {
+            int difference = currentGuess[i] - answerKey[i];
+
+            if (difference > 0)
+            {
+                numberTooHigh++;
+            }
+            else if (difference < 0)
+            {
+                numberTooLow++;
+            }
+        }
+        // check for different phrasing of response
+        if (numberTooHigh == 0 && numberTooLow == 0)
+        {
+            return "You have 0 slots with incorrect rune power! Use Demonologist to lock in your answer!";
+        }
+        else if (numberTooHigh == 0)
+        {
+            result = "You currently have " + numberTooLow + " slot(s) that have too low of a rune power.";
+        }
+        else if (numberTooLow == 0)
+        {
+            result = "You currently have " + numberTooHigh + " slot(s) that have too high of a rune power.";
+        }
+        else
+        {
+            result = "You currently have " + numberTooLow + " slot(s) with too low of a rune power AND " 
+                + numberTooHigh + " slot(s) with too high of a rune power.";
+        }
+            return result;
     }
 }
