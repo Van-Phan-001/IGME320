@@ -30,9 +30,23 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    //base load game with player pref logic (can be used for custom launch)
     public void ToGame()
     {
             SceneManager.LoadScene("Game");
+    }
+    //add player pref numbers 
+    public void ToGameEasy()
+    {
+        SceneManager.LoadScene("Game");
+    }
+    public void ToGameMed()
+    {
+        SceneManager.LoadScene("Game");
+    }
+    public void ToGameHard()
+    {
+        SceneManager.LoadScene("Game");
     }
     public void ToTutorialScene()
     {
