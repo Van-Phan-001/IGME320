@@ -13,7 +13,8 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] private bool playTutorial;
 
     #region Singleton definition
-    public static SceneChanger instance;
+    public static SceneChanger instance; 
+    //Code to reference singleton: SceneChanger.instance;
     private void Awake()
     {
         instance = this;
@@ -25,7 +26,14 @@ public class SceneChanger : MonoBehaviour
     private void Start()
     {
         //0 represents if we have not been to scene
-        PlayerPrefs.SetFloat("playTutorial", 0);
+        if(PlayerPrefs.GetFloat("playTutorial") != 0)
+        {
+            PlayerPrefs.SetFloat("playTutorial", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("playTutorial", 0);
+        }
         //PlayerPrefs.GetFloat("playerTutorial"); //line of code to adjust player pref values 
     }
     public void ToMainMenu()
@@ -37,6 +45,7 @@ public class SceneChanger : MonoBehaviour
         if (PlayerPrefs.GetFloat("playTutorial") < 1 || playTutorial)
         {
             PlayerPrefs.SetFloat("playTutorial", 1);
+            //Debug.Log(PlayerPrefs.GetFloat("playTutorial"));
             SceneManager.LoadScene("TutorialScene");
             return;
         }  
