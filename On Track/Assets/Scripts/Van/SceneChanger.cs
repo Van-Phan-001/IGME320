@@ -12,6 +12,13 @@ public class SceneChanger : MonoBehaviour
     [Header("Testing values")]
     [SerializeField] private bool playTutorial;
 
+    #region Singleton definition
+    public static SceneChanger instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion
     /// <summary>
     /// Player prefs can be accessed via
     /// </summary>
