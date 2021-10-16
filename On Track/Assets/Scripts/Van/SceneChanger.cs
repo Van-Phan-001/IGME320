@@ -9,11 +9,15 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class SceneChanger : MonoBehaviour
 {
+    #region Fields
     [Header("Testing values")]
     [SerializeField] private bool playTutorial;
-
     #region Singleton definition
-    public static SceneChanger instance; 
+    public static SceneChanger instance;
+    #endregion
+
+   
+
     //Code to reference singleton: SceneChanger.instance;
     private void Awake()
     {
@@ -21,11 +25,7 @@ public class SceneChanger : MonoBehaviour
     }
     #endregion
 
-    private void Start()
-    {
-        //0 represents if we have not been to scene
-        //PlayerPrefs.GetFloat("playerTutorial"); //line of code to adjust player pref values 
-    }
+    #region Functions
     public void ToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
@@ -33,7 +33,7 @@ public class SceneChanger : MonoBehaviour
     //base load game with player pref logic (can be used for custom launch)
     public void ToGame()
     {
-            SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game");
     }
     //add player pref numbers 
     public void ToGameEasy()
@@ -77,4 +77,6 @@ public class SceneChanger : MonoBehaviour
         //this only runs in built version
         Application.Quit();
     }
+    #endregion
+
 }

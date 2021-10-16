@@ -6,12 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class CustomOptions : MonoBehaviour
 {
+    #region Fields
     [SerializeField] private Text goldText;
-
     private int gold = 100;
     private int numSlots = 5;
     private int sum = 0;
+    #endregion
 
+    #region Start
     private void Start()
     {
         //defaults
@@ -21,6 +23,9 @@ public class CustomOptions : MonoBehaviour
 
         goldText.text = $"{gold}G";
     }
+    #endregion
+
+    #region Functions
     public void goldPlusTen()
     {
         gold += 10;
@@ -63,7 +68,7 @@ public class CustomOptions : MonoBehaviour
     }
 
     //save all values to prefs and launch game
-    public void toGame() 
+    public void toGame()
     {
         PlayerPrefs.SetInt("gold", gold);
         PlayerPrefs.SetInt("numSlots", numSlots);
@@ -71,4 +76,5 @@ public class CustomOptions : MonoBehaviour
         Debug.Log($"Gold: {PlayerPrefs.GetInt("gold")}, Slots: {PlayerPrefs.GetInt("numSlots")}, Sum: {PlayerPrefs.GetInt("sum")}");
         SceneManager.LoadScene("Game");
     }
+    #endregion
 }

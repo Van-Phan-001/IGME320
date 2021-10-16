@@ -6,17 +6,21 @@ using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
+    #region Fields
     [Header("Tutorial pages")]
     [SerializeField] private List<Sprite> tutorialPages;
     [SerializeField] private Image currentPage; //address for background image that displays current page
-
     private int currentPageIndex = 0;
+    #endregion
 
+    #region Start
     private void Start()
     {
         ChangeScene();
     }
+    #endregion
 
+    #region Functions
     public void NextPage()
     {
         currentPageIndex++;
@@ -41,6 +45,5 @@ public class TutorialManager : MonoBehaviour
     {
         currentPage.sprite = tutorialPages[currentPageIndex];
     }
-
-
+    #endregion
 }

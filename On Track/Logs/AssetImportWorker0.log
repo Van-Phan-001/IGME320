@@ -2361,3 +2361,53 @@ Received Import Request.
 Start importing Assets/Scenes/IntialMainMenu.unity using Guid(a7ff78df952dd1741ab55d71a9320466) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c789666b8e8114ddfef5f179efe7cab') in 0.018660 seconds
   Import took 0.026598 seconds .
 
+========================================================================
+Received Import Request.
+  Time since last request: 185.378270 seconds.
+  path: Assets/Prefabs/Van/PlayMenuPrefs.prefab
+  artifactKey: Guid(15e38185e0637534da39a079f4ad3a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Van/PlayMenuPrefs.prefab using Guid(15e38185e0637534da39a079f4ad3a2c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f2ed5e0bca4ed1d74d46139273647c19') in 0.041106 seconds
+  Import took 0.046736 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 6.056073 seconds.
+  path: Assets/Scripts/Van/CustomOptions.cs
+  artifactKey: Guid(356a6a339c674714f8b98a3392b26652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Van/CustomOptions.cs using Guid(356a6a339c674714f8b98a3392b26652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93b23c69197c39201580319d96ac5bb8') in 0.012713 seconds
+  Import took 0.019159 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.002795 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for LinuxStandalone target not found
+Native extension for WindowsStandalone target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.241 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.40 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1808 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 88.9 MB.
+System memory in use after: 88.9 MB.
+
+Unloading 12 unused Assets to reduce memory usage. Loaded Objects now: 2549.
+Total: 3.440500 ms (FindLiveObjects: 0.399200 ms CreateObjectMapping: 0.102700 ms MarkObjects: 2.774200 ms  DeleteObjects: 0.162400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 353.272519 seconds.
+  path: Assets/Scripts/Van/CustomOptions.cs
+  artifactKey: Guid(356a6a339c674714f8b98a3392b26652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/Van/CustomOptions.cs using Guid(356a6a339c674714f8b98a3392b26652) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b9e064813fa81eb4b145f83fb2731db') in 0.007973 seconds
+  Import took 0.014816 seconds .
+
