@@ -72,4 +72,9 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("CustomSelect");
     }
+    public void ToExit()
+    {
+        //this only runs in built version
+        Application.Quit();
+    }
 }
