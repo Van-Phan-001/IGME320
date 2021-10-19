@@ -904,6 +904,7 @@ GameObject:
   - component: {fileID: 914886652}
   - component: {fileID: 914886651}
   - component: {fileID: 914886650}
+  - component: {fileID: 914886653}
   m_Layer: 5
   m_Name: Demonologist
   m_TagString: Untagged
@@ -1025,6 +1026,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914886648}
   m_CullTransparentMesh: 1
+--- !u!114 &914886653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914886648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1080294812}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Lock in your answers, and see if you successfully solved
+              the Demon's riddle. Costs 0 gold.
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1080294812}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hover over a hint to see how it helps you!
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &953863225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1435,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1060760896}
   m_CullTransparentMesh: 1
+--- !u!1 &1080294811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1080294814}
+  - component: {fileID: 1080294813}
+  - component: {fileID: 1080294812}
+  m_Layer: 5
+  m_Name: HoverDescription
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1080294812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080294811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Hover over a hint to see how it helps you!
+--- !u!222 &1080294813
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080294811}
+  m_CullTransparentMesh: 1
+--- !u!224 &1080294814
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080294811}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1518116060}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.7281, y: -103}
+  m_SizeDelta: {x: 165.4563, y: 120}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &1363672748 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3948006547058834897, guid: b214f2e06f68f864e8c3b8eee74ddb9d, type: 3}
@@ -1405,6 +1531,7 @@ GameObject:
   - component: {fileID: 1451099332}
   - component: {fileID: 1451099331}
   - component: {fileID: 1451099330}
+  - component: {fileID: 1451099333}
   m_Layer: 5
   m_Name: WitchHint
   m_TagString: Untagged
@@ -1526,6 +1653,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451099328}
   m_CullTransparentMesh: 1
+--- !u!114 &1451099333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451099328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1080294812}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Tells you the number of slots that have too high or
+              too low of a rune power. Costs 15 gold.
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1080294812}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hover over a hint to see how it helps you!
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1464412295
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1874,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1854376943}
+  - {fileID: 1080294814}
   m_Father: {fileID: 785139733}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1759,6 +1933,7 @@ GameObject:
   - component: {fileID: 1542572634}
   - component: {fileID: 1542572633}
   - component: {fileID: 1542572632}
+  - component: {fileID: 1542572635}
   m_Layer: 5
   m_Name: TheurgistHint
   m_TagString: Untagged
@@ -1880,6 +2055,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542572630}
   m_CullTransparentMesh: 1
+--- !u!114 &1542572635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1542572630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1080294812}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Describes the exact slots that have the correct rune
+              power. Costs 10 gold.
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1080294812}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hover over a hint to see how it helps you!
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!224 &1661827563 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3948006547058834897, guid: b214f2e06f68f864e8c3b8eee74ddb9d, type: 3}
@@ -1998,8 +2219,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.7281, y: 1.1359}
-  m_SizeDelta: {x: 165.4563, y: 313.7282}
+  m_AnchoredPosition: {x: 2.7281, y: 79.00001}
+  m_SizeDelta: {x: 165.4563, y: 158}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1854376944
 MonoBehaviour:
@@ -2175,6 +2396,7 @@ GameObject:
   - component: {fileID: 1940379696}
   - component: {fileID: 1940379695}
   - component: {fileID: 1940379694}
+  - component: {fileID: 1940379697}
   m_Layer: 5
   m_Name: SorcererHint
   m_TagString: Untagged
@@ -2296,6 +2518,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1940379692}
   m_CullTransparentMesh: 1
+--- !u!114 &1940379697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940379692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1080294812}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Describes how many unique power runes are correct,
+              regardless of their position. Costs 10 gold.
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1080294812}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Tells you how many unique rune powers you have correct,
+              but gives no information about position.
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1978206451
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2691,7 @@ GameObject:
   - component: {fileID: 2066992309}
   - component: {fileID: 2066992308}
   - component: {fileID: 2066992307}
+  - component: {fileID: 2066992310}
   m_Layer: 5
   m_Name: WizardHint
   m_TagString: Untagged
@@ -2543,6 +2813,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066992305}
   m_CullTransparentMesh: 1
+--- !u!114 &2066992310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2066992305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1080294812}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Randomly chooses a slot and gives you the correct rune
+              power. Can give duplicate answers on subsequent hints. Costs 40 gold
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1080294812}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_MethodName: set_text
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hover over a hint to see how it helps you!
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &2102530640
 GameObject:
   m_ObjectHideFlags: 0
@@ -2683,6 +2999,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1699836511569326420, guid: bd86a6c3c61bfa048997415b7b1db904, type: 3}
+      propertyPath: tempGameLog
+      value: 
+      objectReference: {fileID: 1854376944}
     - target: {fileID: 1699836511569326421, guid: bd86a6c3c61bfa048997415b7b1db904, type: 3}
       propertyPath: m_Name
       value: GameManager

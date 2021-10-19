@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     int numberOfSlots;
     [SerializeField]
     bool sumHint;
+    [SerializeField]
+    Text tempGameLog;
 
     string currentHintString;
     List<string> hintList;
@@ -35,15 +37,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // logging to help play
-
-        currentGold = startingGold;
-        Debug.Log("Starting Gold: " + startingGold);
         hintList = new List<string>();
+        currentGold = startingGold;
+        // logging to help play
+        // TEMP: starting hint gives gold value
+        currentHintString = "The demon has chosen " + numberOfSlots + " runes of power one through six in a specific order. " +
+            "If you can guess them correctly utilizing your " + startingGold + " starting gold, you will be granted anything your " +
+            "heart desires!";
 
-        // print guess
-        string currentGuessLog = "Current Guess is " + GuessString() + " and you can change it in the inspector for now!";
-        Debug.Log(currentGuessLog);
 
         // create answer based on number of slots
         answerKey = new List<int>();
@@ -61,6 +62,12 @@ public class GameManager : MonoBehaviour
         }
 
         Debug.Log(answerResult);
+    }
+
+    //TEMP UPDATE TO SHOW
+    private void Update()
+    {
+        tempGameLog.text = currentHintString;
     }
 
     // Methods
@@ -150,14 +157,13 @@ public class GameManager : MonoBehaviour
         currentHintString = "";
         if (PriceHandler("theurgist"))
         {
-            currentHintString = "Theurgist hint for guess " + GuessString() + ": " + TheurgistHint();
-            Debug.Log(currentHintString);
-            Debug.Log("Remaining Gold: " + currentGold);
+            currentHintString = "Theurgist hint for guess \n" + GuessString() + ":\n" + TheurgistHint();
+            currentHintString += "\nRemaining Gold: " + currentGold;
             hintList.Add(currentHintString);
         }
         else
         {
-            Debug.Log("You don't have enough gold to use this hint! Current gold: " + currentGold);
+            currentHintString = "You don't have enough gold to use this hint! Current gold: " + currentGold;
         }
     }
     public void SorcererButton()
@@ -165,14 +171,13 @@ public class GameManager : MonoBehaviour
         currentHintString = "";
         if (PriceHandler("sorceror"))
         {
-            currentHintString = "Sorcerer hint for guess " + GuessString() + ": " + SorcererHint();
-            Debug.Log(currentHintString);
-            Debug.Log("Remaining Gold: " + currentGold);
+            currentHintString = "Sorcerer hint for guess \n" + GuessString() + ":\n" + SorcererHint();
+            currentHintString += "\nRemaining Gold: " + currentGold;
             hintList.Add(currentHintString);
         }
         else
         {
-            Debug.Log("You don't have enough gold to use this hint! Current gold: " + currentGold);
+            currentHintString = "You don't have enough gold to use this hint! Current gold: " + currentGold;
         }
     }
     public void WizardButton()
@@ -180,14 +185,13 @@ public class GameManager : MonoBehaviour
         currentHintString = "";
         if (PriceHandler("wizard"))
         {
-            currentHintString = "Wizard hint for guess " + GuessString() + ": " + WizardHint();
-            Debug.Log(currentHintString);
-            Debug.Log("Remaining Gold: " + currentGold);
+            currentHintString = "Wizard hint for guess \n" + GuessString() + ":\n" + WizardHint();
+            currentHintString += "\nRemaining Gold: " + currentGold;
             hintList.Add(currentHintString);
         }
         else
         {
-            Debug.Log("You don't have enough gold to use this hint! Current gold: " + currentGold);
+            currentHintString = "You don't have enough gold to use this hint! Current gold: " + currentGold;
         }
     }
     public void WitchButton()
@@ -195,14 +199,13 @@ public class GameManager : MonoBehaviour
         currentHintString = "";
         if (PriceHandler("witch"))
         {
-            currentHintString = "Witch hint for guess " + GuessString() + ": " + WitchHint();
-            Debug.Log(currentHintString);
-            Debug.Log("Remaining Gold: " + currentGold);
+            currentHintString = "Witch hint for guess \n" + GuessString() + ":\n" + WitchHint();
+            currentHintString += "\nRemaining Gold: " + currentGold;
             hintList.Add(currentHintString);
         }
         else
         {
-            Debug.Log("You don't have enough gold to use this hint! Current gold: " + currentGold);
+            currentHintString = "You don't have enough gold to use this hint! Current gold: " + currentGold;
         }
     }
     public void DemonologistButton()
