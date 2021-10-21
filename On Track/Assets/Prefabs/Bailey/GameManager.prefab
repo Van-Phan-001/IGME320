@@ -46,4 +46,5 @@ MonoBehaviour:
   startingGold: 100
   numberOfSlots: 4
   sumHint: 0
+  messageBoxPrefab: {fileID: 6144400574943656952, guid: 9c82c27abe6193b47b80ab36767b3fad, type: 3}
   currentGuess: 01000000020000000300000004000000
