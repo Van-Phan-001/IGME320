@@ -14,15 +14,12 @@ public class SceneChanger : MonoBehaviour
     [SerializeField] private bool playTutorial;
     #region Singleton definition
     public static SceneChanger instance;
-    #endregion
-
-   
-
     //Code to reference singleton: SceneChanger.instance;
     private void Awake()
     {
         instance = this;
     }
+    #endregion
     #endregion
 
     #region Functions
