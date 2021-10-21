@@ -4,8 +4,12 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 
+/// <summary>
+/// Serialized game object that contains the .wav clip of the audio that needs to be played
+/// </summary>
 [System.Serializable] public class Sound
 {
+    #region Fields
     private AudioSource source; //source we play audio from
 
     [Header("Sound file")]
@@ -16,13 +20,16 @@ using UnityEngine.Audio;
     [SerializeField] [Range(.1f, 3f)] private float pitch = 1f;
     [SerializeField] private bool loop = false;
     [SerializeField] private string name = "nameless";
-    //Properties
+    #endregion
 
-     public string Name
+    #region Properties
+    public string Name
     {
         get { return name; }
     }
+    #endregion
 
+    #region Functions
     //assigns an object source for audio to play from
     public void SetSource(AudioSource _source)
     {
@@ -43,4 +50,5 @@ using UnityEngine.Audio;
     {
         source.Play();
     }
+    #endregion
 }
