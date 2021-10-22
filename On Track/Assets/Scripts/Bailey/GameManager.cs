@@ -16,9 +16,10 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     bool sumHint;
     [SerializeField]
-    Text tempGameLog;
+    GameObject messageBoxPrefab;
 
     string currentHintString;
+    string prevHint;
     List<string> hintList;
 
     List<int> answerKey;
@@ -44,7 +45,8 @@ public class GameManager : MonoBehaviour
         currentHintString = "The demon has chosen " + numberOfSlots + " runes of power one through six in a specific order. " +
             "If you can guess them correctly utilizing your " + startingGold + " starting gold, you will be granted anything your " +
             "heart desires!";
-
+        hintList.Add(currentHintString);
+        PushMessage();
 
         // create answer based on number of slots
         answerKey = new List<int>();
@@ -67,7 +69,7 @@ public class GameManager : MonoBehaviour
     //TEMP UPDATE TO SHOW
     private void Update()
     {
-        tempGameLog.text = currentHintString;
+        
     }
 
     // Methods
@@ -105,6 +107,15 @@ public class GameManager : MonoBehaviour
         }
 
         return guessResult;
+    }
+
+    // this method prints the last thing in the current list to the game log and parents it to the scroll
+    private void PushMessage()
+    {
+        GameObject message = Instantiate(messageBoxPrefab, new Vector3(0, 0, 0), Quaternion.identity);
+        Text newText = message.GetComponentInChildren<Text>();
+        newText.text = hintList.LastOrDefault();
+        message.transform.SetParent(GameObject.Find("ViewportContents").transform);
     }
 
     #region Button Handlers
@@ -165,6 +176,9 @@ public class GameManager : MonoBehaviour
         {
             currentHintString = "You don't have enough gold to use this hint! Current gold: " + currentGold;
         }
+        hintList.Add(currentHintString);
+        PushMessage();
+
     }
     public void SorcererButton()
     {
@@ -173,12 +187,13 @@ public class GameManager : MonoBehaviour
         {
             currentHintString = "Sorcerer hint for guess \n" + GuessString() + ":\n" + SorcererHint();
             currentHintString += "\nRemaining Gold: " + currentGold;
-            hintList.Add(currentHintString);
         }
         else
         {
             currentHintString = "You don't have enough gold to use this hint! Current gold: " + currentGold;
         }
+        hintList.Add(currentHintString);
+        PushMessage();
     }
     public void WizardButton()
     {
@@ -187,12 +202,13 @@ public class GameManager : MonoBehaviour
         {
             currentHintString = "Wizard hint for guess \n" + GuessString() + ":\n" + WizardHint();
             currentHintString += "\nRemaining Gold: " + currentGold;
-            hintList.Add(currentHintString);
         }
         else
         {
             currentHintString = "You don't have enough gold to use this hint! Current gold: " + currentGold;
         }
+        hintList.Add(currentHintString);
+        PushMessage();
     }
     public void WitchButton()
     {
@@ -201,12 +217,13 @@ public class GameManager : MonoBehaviour
         {
             currentHintString = "Witch hint for guess \n" + GuessString() + ":\n" + WitchHint();
             currentHintString += "\nRemaining Gold: " + currentGold;
-            hintList.Add(currentHintString);
         }
         else
         {
             currentHintString = "You don't have enough gold to use this hint! Current gold: " + currentGold;
         }
+        hintList.Add(currentHintString);
+        PushMessage();
     }
     public void DemonologistButton()
     {
