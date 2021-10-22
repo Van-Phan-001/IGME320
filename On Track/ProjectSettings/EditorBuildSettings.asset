@@ -27,7 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectionTypeScene.unity
     guid: 486f88945eed86441a3f26a59a094a0b
   - enabled: 1
-    path: Assets/Scenes/CustomSelection.unity
+    path: Assets/Scenes/CustomSelect.unity
     guid: 1f61c91750e3c474ba44b713e460fa2e
   - enabled: 1
     path: Assets/Scenes/RegularSelection.unity

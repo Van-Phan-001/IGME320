@@ -41,3 +41,8 @@ ehthumbs.db
 Thumbs.db
 *.log
 *.log
+*.asset
+*.log
+On Track/ProjectSettings/EditorBuildSettings.asset
+On Track/Logs/AssetImportWorker0.log
+On Track/UserSettings/EditorUserSettings.asset

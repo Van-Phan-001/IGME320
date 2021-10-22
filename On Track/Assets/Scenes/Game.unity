@@ -2904,11 +2904,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3948006547534427971, guid: b214f2e06f68f864e8c3b8eee74ddb9d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: CancelInvoke
+      value: PlaySound
       objectReference: {fileID: 0}
     - target: {fileID: 3948006547534427971, guid: b214f2e06f68f864e8c3b8eee74ddb9d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: UnityEngine.MonoBehaviour, UnityEngine
+      value: AudioManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3948006547534427971, guid: b214f2e06f68f864e8c3b8eee74ddb9d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
