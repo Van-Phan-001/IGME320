@@ -173,9 +173,16 @@ MonoBehaviour:
   upTicker: {fileID: 3948006547265336709}
   downTicker: {fileID: 3948006547534427971}
   displayText: {fileID: 3948006549049504465}
+  displayImage: {fileID: 3948006547058834903}
   slotId: 0
   gm: {fileID: 0}
   currentValue: 1
+  rune1: {fileID: 21300000, guid: a51093d10d86e9340a5ae8fcf98af11e, type: 3}
+  rune2: {fileID: 21300000, guid: 7d3e8b4490c496e4585698cb66ed9145, type: 3}
+  rune3: {fileID: 21300000, guid: 7e086ff3b7a7eb84d8e610cb5eedc3e7, type: 3}
+  rune4: {fileID: 21300000, guid: dd7dbe552895a4946b957e63d3f97431, type: 3}
+  rune5: {fileID: 21300000, guid: 51c4a3bab205b2b499d16a57a919c959, type: 3}
+  rune6: {fileID: 21300000, guid: 6e16ea96bce0ec148ac5d229137a5d4a, type: 3}
 --- !u!1 &3948006547265336711
 GameObject:
   m_ObjectHideFlags: 0
@@ -573,7 +580,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3948006549049504467}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
