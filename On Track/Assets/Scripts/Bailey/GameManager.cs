@@ -39,9 +39,11 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         hintList = new List<string>();
-        currentGold = startingGold;
+
+        PlayerPrefs.SetInt("gold", 100);
+        currentGold = PlayerPrefs.GetInt("gold");
+
         // logging to help play
-        // TEMP: starting hint gives gold value
         currentHintString = "The demon has chosen " + numberOfSlots + " runes of power one through six in a specific order. " +
             "If you can guess them correctly utilizing your " + startingGold + " starting gold, you will be granted anything your " +
             "heart desires!";

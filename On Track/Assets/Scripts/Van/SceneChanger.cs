@@ -30,6 +30,8 @@ public class SceneChanger : MonoBehaviour
     //base load game with player pref logic (can be used for custom launch)
     public void ToGame()
     {
+        // Later: use difficulties to change player prefs and then call this method
+        // use switch on slot number to handle which scene is started.
         SceneManager.LoadScene("Game");
     }
     //add player pref numbers 
