@@ -46,3 +46,7 @@ Thumbs.db
 On Track/ProjectSettings/EditorBuildSettings.asset
 On Track/Logs/AssetImportWorker0.log
 On Track/UserSettings/EditorUserSettings.asset
+*.log
+On Track/Logs/shadercompiler-AssetImportWorker0.log
+On Track/Logs/shadercompiler-UnityShaderCompiler.exe0.log
+On Track/Logs/AssetImportWorker0.log
