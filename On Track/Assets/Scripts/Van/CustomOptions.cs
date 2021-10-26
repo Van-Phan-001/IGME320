@@ -58,11 +58,11 @@ public class CustomOptions : MonoBehaviour
     {
         numSlots = 6;
     }
-    public void setSumYes()
+    public void setSumNo()
     {
         sum = 1;
     }
-    public void setSumNo()
+    public void setSumYes()
     {
         sum = 0;
     }
@@ -74,7 +74,8 @@ public class CustomOptions : MonoBehaviour
         PlayerPrefs.SetInt("numSlots", numSlots);
         PlayerPrefs.SetInt("sum", sum); //sum 0 == yes
         Debug.Log($"Gold: {PlayerPrefs.GetInt("gold")}, Slots: {PlayerPrefs.GetInt("numSlots")}, Sum: {PlayerPrefs.GetInt("sum")}");
-        SceneManager.LoadScene("Game");
+        SceneChanger sc = FindObjectOfType<SceneChanger>();
+        sc.ToGame();
     }
     #endregion
 }
