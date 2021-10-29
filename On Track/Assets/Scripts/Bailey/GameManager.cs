@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour
     bool sumHint;
     [SerializeField]
     GameObject messageBoxPrefab;
+    [SerializeField]
+    GameObject goldTextBox;
 
     string currentHintString;
     string prevHint;
@@ -40,12 +42,13 @@ public class GameManager : MonoBehaviour
     {
         hintList = new List<string>();
 
-        PlayerPrefs.SetInt("gold", 100);
-        currentGold = PlayerPrefs.GetInt("gold");
+
+        startingGold = PlayerPrefs.GetInt("gold");
+        currentGold = startingGold;
 
         // logging to help play
         currentHintString = "The demon has chosen " + numberOfSlots + " runes of power one through six in a specific order. " +
-            "If you can guess them correctly utilizing your " + startingGold + " starting gold, you will be granted anything your " +
+            "If you can guess them correctly utilizing your " + currentGold + " starting gold, you will be granted anything your " +
             "heart desires!";
         hintList.Add(currentHintString);
         PushMessage();
@@ -65,6 +68,21 @@ public class GameManager : MonoBehaviour
             answerResult += item.ToString() + " ";
         }
 
+        // give sum hint
+        if (PlayerPrefs.GetInt("sum") == 0)
+        {
+            int totalSum = 0;
+            foreach (var item in answerKey)
+            {
+                totalSum += item;
+            }
+            currentHintString = "The demon has opted to give you a starting hint: \nThe total sum of the rune powers is " + totalSum + ".";
+            hintList.Add(currentHintString);
+            PushMessage();
+            StartCoroutine(ScrollUp());
+        }
+
+
         Debug.Log(answerResult);
     }
 
@@ -72,6 +90,17 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
         
+    }
+
+    IEnumerator ScrollUp()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameObject.FindObjectOfType<ScrollRect>().velocity = new Vector2(0f, -1000f);
+    }
+    IEnumerator ScrollDown()
+    {
+        yield return new WaitForSeconds(0.1f);
+        GameObject.FindObjectOfType<ScrollRect>().velocity = new Vector2(0f, 1000f);
     }
 
     // Methods
@@ -118,6 +147,9 @@ public class GameManager : MonoBehaviour
         Text newText = message.GetComponentInChildren<Text>();
         newText.text = hintList.LastOrDefault();
         message.transform.SetParent(GameObject.Find("ViewportContents").transform);
+        message.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        goldTextBox.GetComponent<Text>().text = "Current Gold: " + currentGold;
+        StartCoroutine(ScrollDown());
     }
 
     #region Button Handlers
@@ -171,7 +203,6 @@ public class GameManager : MonoBehaviour
         if (PriceHandler("theurgist"))
         {
             currentHintString = "Theurgist hint for guess \n" + GuessString() + ":\n" + TheurgistHint();
-            currentHintString += "\nRemaining Gold: " + currentGold;
             hintList.Add(currentHintString);
         }
         else
@@ -188,7 +219,6 @@ public class GameManager : MonoBehaviour
         if (PriceHandler("sorceror"))
         {
             currentHintString = "Sorcerer hint for guess \n" + GuessString() + ":\n" + SorcererHint();
-            currentHintString += "\nRemaining Gold: " + currentGold;
         }
         else
         {
@@ -203,7 +233,6 @@ public class GameManager : MonoBehaviour
         if (PriceHandler("wizard"))
         {
             currentHintString = "Wizard hint for guess \n" + GuessString() + ":\n" + WizardHint();
-            currentHintString += "\nRemaining Gold: " + currentGold;
         }
         else
         {
@@ -218,7 +247,6 @@ public class GameManager : MonoBehaviour
         if (PriceHandler("witch"))
         {
             currentHintString = "Witch hint for guess \n" + GuessString() + ":\n" + WitchHint();
-            currentHintString += "\nRemaining Gold: " + currentGold;
         }
         else
         {

@@ -30,22 +30,41 @@ public class SceneChanger : MonoBehaviour
     //base load game with player pref logic (can be used for custom launch)
     public void ToGame()
     {
-        // Later: use difficulties to change player prefs and then call this method
-        // use switch on slot number to handle which scene is started.
-        SceneManager.LoadScene("Game");
+        switch (PlayerPrefs.GetInt("numSlots"))
+        {
+            case 4:
+            default:
+                SceneManager.LoadScene("Game");
+                break;
+            case 5:
+                SceneManager.LoadScene("Game5Slots");
+                break;
+            case 6:
+                SceneManager.LoadScene("Game6Slots");
+                break;
+        }
     }
     //add player pref numbers 
     public void ToGameEasy()
     {
-        SceneManager.LoadScene("Game");
+        PlayerPrefs.SetInt("gold", 100);
+        PlayerPrefs.SetInt("numslots", 4);
+        PlayerPrefs.SetInt("sum", 0);
+        ToGame();
     }
     public void ToGameMed()
     {
-        SceneManager.LoadScene("Game");
+        PlayerPrefs.SetInt("gold", 100);
+        PlayerPrefs.SetInt("numslots", 4);
+        PlayerPrefs.SetInt("sum", 1);
+        ToGame();
     }
     public void ToGameHard()
     {
-        SceneManager.LoadScene("Game");
+        PlayerPrefs.SetInt("gold", 100);
+        PlayerPrefs.SetInt("numslots", 5);
+        PlayerPrefs.SetInt("sum", 1);
+        ToGame();
     }
     public void ToTutorialScene()
     {
