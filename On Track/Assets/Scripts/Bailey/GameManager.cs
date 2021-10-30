@@ -166,6 +166,12 @@ public class GameManager : MonoBehaviour
         switch (hintType)
         {
             case "theurgist":
+                if (currentGold >= 25)
+                {
+                    currentGold -= 25;
+                    return true;
+                }
+                break;
             case "sorceror":
                 if (currentGold >= 10)
                 {

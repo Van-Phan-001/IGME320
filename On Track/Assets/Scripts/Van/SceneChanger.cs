@@ -23,9 +23,15 @@ public class SceneChanger : MonoBehaviour
     #endregion
 
     #region Functions
+
+    IEnumerator TransitionDelay(float a_fDelay = 5.0f,string sceneIndex = "MainMenu")
+    {
+        yield return new WaitForSeconds(a_fDelay);
+        SceneManager.LoadScene(sceneIndex);
+    }
     public void ToMainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(TransitionDelay(.5f,"MainMenu"));
     }
     //base load game with player pref logic (can be used for custom launch)
     public void ToGame()
@@ -34,13 +40,13 @@ public class SceneChanger : MonoBehaviour
         {
             case 4:
             default:
-                SceneManager.LoadScene("Game");
+                StartCoroutine(TransitionDelay(.5f, "Game"));
                 break;
             case 5:
-                SceneManager.LoadScene("Game5Slots");
+                StartCoroutine(TransitionDelay(.5f, "Game5Slots"));
                 break;
             case 6:
-                SceneManager.LoadScene("Game6Slots");
+                StartCoroutine(TransitionDelay(.5f, "Game6Slots"));
                 break;
         }
     }
@@ -68,27 +74,27 @@ public class SceneChanger : MonoBehaviour
     }
     public void ToTutorialScene()
     {
-        SceneManager.LoadScene("TutorialScene");
+        StartCoroutine(TransitionDelay(.5f, "TutorialScene"));
     }
     public void ToWinState()
     {
-        SceneManager.LoadScene("WinState");
+        StartCoroutine(TransitionDelay(.5f, "WinState"));
     }
     public void ToLoseState()
     {
-        SceneManager.LoadScene("LoseState");
+        StartCoroutine(TransitionDelay(.5f, "LoseState"));
     }
     public void ToSelectTypeScene()
     {
-        SceneManager.LoadScene("SelectionTypeScene");
+        StartCoroutine(TransitionDelay(.5f, "SelectionTypeScene"));
     }
     public void ToRegularSelection()
     {
-        SceneManager.LoadScene("RegularSelection");
+        StartCoroutine(TransitionDelay(.5f, "RegularSelection"));
     }
     public void ToCustomSelect()
     {
-        SceneManager.LoadScene("CustomSelect");
+        StartCoroutine(TransitionDelay(.5f, "CustomSelect"));
     }
     public void ToExit()
     {
