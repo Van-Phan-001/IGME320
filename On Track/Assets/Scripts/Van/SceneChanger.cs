@@ -12,6 +12,8 @@ public class SceneChanger : MonoBehaviour
     #region Fields
     [Header("Testing values")]
     [SerializeField] private bool playTutorial;
+    private float defaultDelay = .3f;
+
     #region Singleton definition
     public static SceneChanger instance;
     //Code to reference singleton: SceneChanger.instance;
@@ -23,6 +25,13 @@ public class SceneChanger : MonoBehaviour
     #endregion
 
     #region Functions
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Escape))
+        {
+            ToMainMenu();
+        }
+    }
 
     IEnumerator TransitionDelay(float a_fDelay = 5.0f,string sceneIndex = "MainMenu")
     {
@@ -40,13 +49,13 @@ public class SceneChanger : MonoBehaviour
         {
             case 4:
             default:
-                StartCoroutine(TransitionDelay(.5f, "Game"));
+                StartCoroutine(TransitionDelay(defaultDelay, "Game"));
                 break;
             case 5:
-                StartCoroutine(TransitionDelay(.5f, "Game5Slots"));
+                StartCoroutine(TransitionDelay(defaultDelay, "Game5Slots"));
                 break;
             case 6:
-                StartCoroutine(TransitionDelay(.5f, "Game6Slots"));
+                StartCoroutine(TransitionDelay(defaultDelay, "Game6Slots"));
                 break;
         }
     }
@@ -74,27 +83,27 @@ public class SceneChanger : MonoBehaviour
     }
     public void ToTutorialScene()
     {
-        StartCoroutine(TransitionDelay(.5f, "TutorialScene"));
+        StartCoroutine(TransitionDelay(defaultDelay, "TutorialScene"));
     }
     public void ToWinState()
     {
-        StartCoroutine(TransitionDelay(.5f, "WinState"));
+        StartCoroutine(TransitionDelay(defaultDelay, "WinState"));
     }
     public void ToLoseState()
     {
-        StartCoroutine(TransitionDelay(.5f, "LoseState"));
+        StartCoroutine(TransitionDelay(defaultDelay, "LoseState"));
     }
     public void ToSelectTypeScene()
     {
-        StartCoroutine(TransitionDelay(.5f, "SelectionTypeScene"));
+        StartCoroutine(TransitionDelay(defaultDelay, "SelectionTypeScene"));
     }
     public void ToRegularSelection()
     {
-        StartCoroutine(TransitionDelay(.5f, "RegularSelection"));
+        StartCoroutine(TransitionDelay(defaultDelay, "RegularSelection"));
     }
     public void ToCustomSelect()
     {
-        StartCoroutine(TransitionDelay(.5f, "CustomSelect"));
+        StartCoroutine(TransitionDelay(defaultDelay, "CustomSelect"));
     }
     public void ToExit()
     {

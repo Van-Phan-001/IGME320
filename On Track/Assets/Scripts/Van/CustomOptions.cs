@@ -11,6 +11,8 @@ public class CustomOptions : MonoBehaviour
     private int gold = 100;
     private int numSlots = 5;
     private int sum = 0;
+    private int goldMax = 1000;
+    private int goldMin = 0;
     #endregion
 
     #region Start
@@ -26,24 +28,32 @@ public class CustomOptions : MonoBehaviour
     #endregion
 
     #region Functions
+    private int GoldClamp(int gold)
+    {
+        return Mathf.Clamp(gold, goldMin, goldMax);
+    }
     public void goldPlusTen()
     {
         gold += 10;
+        gold = GoldClamp(gold);
         goldText.text = $"{gold}G";
     }
     public void goldMinusTen()
     {
         gold -= 10;
+        gold = GoldClamp(gold);
         goldText.text = $"{gold}G";
     }
     public void goldPlusHundred()
     {
         gold += 100;
+        gold = GoldClamp(gold);
         goldText.text = $"{gold}G";
     }
     public void goldMinusHundred()
     {
         gold -= 100;
+        gold = GoldClamp(gold);
         goldText.text = $"{gold}G";
     }
     public void setSlotsFour()

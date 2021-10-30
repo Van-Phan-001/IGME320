@@ -701,6 +701,10 @@ PrefabInstance:
       propertyPath: sounds.Array.data[0].name
       value: menuClick
       objectReference: {fileID: 0}
+    - target: {fileID: 2184208545634897601, guid: 00d04db41051a2d4cba3ad0de09ce6bd, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 0.45
+      objectReference: {fileID: 0}
     - target: {fileID: 2184208545634897602, guid: 00d04db41051a2d4cba3ad0de09ce6bd, type: 3}
       propertyPath: m_Name
       value: AudioManager
