@@ -26,16 +26,6 @@ public class AudioManager : MonoBehaviour
         {
             _instance = this;
         }
-    }
-    #endregion
-
-    private Dictionary<string,Sound> soundsDictionary = new Dictionary<string, Sound>();
-    #endregion
-
-    #region Awake
-    void Awake()
-    {
-        instance = this;
         foreach (Sound s in sounds)
         {
             s.SetSource(gameObject.AddComponent<AudioSource>());
@@ -43,6 +33,9 @@ public class AudioManager : MonoBehaviour
             soundsDictionary.Add(s.Name, s); //adds sounds to our dictionary so play found can call via string
         }
     }
+    #endregion
+
+    private Dictionary<string,Sound> soundsDictionary = new Dictionary<string, Sound>();
     #endregion
 
     #region Functions
