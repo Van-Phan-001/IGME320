@@ -15,11 +15,19 @@ public class SceneChanger : MonoBehaviour
     private float defaultDelay = .3f;
 
     #region Singleton definition
-    public static SceneChanger instance;
-    //Code to reference singleton: SceneChanger.instance;
+    private static SceneChanger _instance;
+    public static SceneChanger Instance { get { return _instance; } }
+    //Code to reference singleton: SceneChanger.Instance;
     private void Awake()
     {
-        instance = this;
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
     }
     #endregion
     #endregion
@@ -29,85 +37,42 @@ public class SceneChanger : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            ToMainMenu();
+            ToScene(1f,0);
         }
     }
 
-    IEnumerator TransitionDelay(float a_fDelay = 5.0f,string sceneIndex = "MainMenu")
+    /// <summary>
+    /// Coroutine to transition to another scene with a slight delay
+    /// </summary>
+    IEnumerator TransitionDelay(float a_fDelay = 5.0f,string a_sSceneIndex = "MainMenu")
     {
         yield return new WaitForSeconds(a_fDelay);
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(a_sSceneIndex);
     }
-    public void ToMainMenu()
+    IEnumerator TransitionDelay(float a_fDelay = 5.0f, int a_iSceneIndex = 0)
     {
-        StartCoroutine(TransitionDelay(.5f,"MainMenu"));
+        yield return new WaitForSeconds(a_fDelay);
+        SceneManager.LoadScene(a_iSceneIndex);
     }
-    //base load game with player pref logic (can be used for custom launch)
-    public void ToGame()
+
+    /// <summary>
+    /// Pass in the delay in seconds then pass in either the string or int index
+    /// of the desired scene for the game to go to
+    /// </summary>
+    public void ToScene(float a_fDelay = 5.0f, string a_sSceneIndex = "MainMenu")
     {
-        switch (PlayerPrefs.GetInt("numSlots"))
-        {
-            case 4:
-            default:
-                StartCoroutine(TransitionDelay(defaultDelay, "Game"));
-                break;
-            case 5:
-                StartCoroutine(TransitionDelay(defaultDelay, "Game5Slots"));
-                break;
-            case 6:
-                StartCoroutine(TransitionDelay(defaultDelay, "Game6Slots"));
-                break;
-        }
+        StartCoroutine(TransitionDelay(a_fDelay, a_sSceneIndex));
     }
-    //add player pref numbers 
-    public void ToGameEasy()
+    public void ToScene(float a_fDelay = 5.0f, int a_iSceneIndex = 0)
     {
-        PlayerPrefs.SetInt("gold", 100);
-        PlayerPrefs.SetInt("numslots", 4);
-        PlayerPrefs.SetInt("sum", 0);
-        ToGame();
+        StartCoroutine(TransitionDelay(a_fDelay, a_iSceneIndex));
     }
-    public void ToGameMed()
-    {
-        PlayerPrefs.SetInt("gold", 100);
-        PlayerPrefs.SetInt("numslots", 4);
-        PlayerPrefs.SetInt("sum", 1);
-        ToGame();
-    }
-    public void ToGameHard()
-    {
-        PlayerPrefs.SetInt("gold", 100);
-        PlayerPrefs.SetInt("numslots", 5);
-        PlayerPrefs.SetInt("sum", 1);
-        ToGame();
-    }
-    public void ToTutorialScene()
-    {
-        StartCoroutine(TransitionDelay(defaultDelay, "TutorialScene"));
-    }
-    public void ToWinState()
-    {
-        StartCoroutine(TransitionDelay(defaultDelay, "WinState"));
-    }
-    public void ToLoseState()
-    {
-        StartCoroutine(TransitionDelay(defaultDelay, "LoseState"));
-    }
-    public void ToSelectTypeScene()
-    {
-        StartCoroutine(TransitionDelay(defaultDelay, "SelectionTypeScene"));
-    }
-    public void ToRegularSelection()
-    {
-        StartCoroutine(TransitionDelay(defaultDelay, "RegularSelection"));
-    }
-    public void ToCustomSelect()
-    {
-        StartCoroutine(TransitionDelay(defaultDelay, "CustomSelect"));
-    }
+
+    /// <summary>
+    /// Exits the game when in executable mode
+    /// </summary>
     public void ToExit()
     {
-        //this only runs in built version
         Application.Quit();
     }
     #endregion
