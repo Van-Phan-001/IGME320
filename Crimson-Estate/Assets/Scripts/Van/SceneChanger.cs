@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
 /// <summary>
 /// Attach events to each function based off scene the button
 /// need to go to
@@ -10,9 +11,8 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     #region Fields
-    [Header("Testing values")]
-    [SerializeField] private bool playTutorial;
-    private float defaultDelay = .3f;
+    [Header("Scene values")]
+    private const float m_fDefaultDelay = 1.0f;
 
     #region Singleton definition
     private static SceneChanger _instance;
@@ -37,19 +37,19 @@ public class SceneChanger : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Escape))
         {
-            ToScene(1f,0);
+            ToScene(1.0f,0);
         }
     }
 
     /// <summary>
     /// Coroutine to transition to another scene with a slight delay
     /// </summary>
-    IEnumerator TransitionDelay(float a_fDelay = 5.0f,string a_sSceneIndex = "MainMenu")
+    IEnumerator TransitionDelay(float a_fDelay = m_fDefaultDelay, string a_sSceneIndex = "MainMenu")
     {
         yield return new WaitForSeconds(a_fDelay);
         SceneManager.LoadScene(a_sSceneIndex);
     }
-    IEnumerator TransitionDelay(float a_fDelay = 5.0f, int a_iSceneIndex = 0)
+    IEnumerator TransitionDelay(float a_fDelay = m_fDefaultDelay, int a_iSceneIndex = 0)
     {
         yield return new WaitForSeconds(a_fDelay);
         SceneManager.LoadScene(a_iSceneIndex);

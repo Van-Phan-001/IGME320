@@ -12,7 +12,22 @@ public class AudioManager : MonoBehaviour
     #region Fields
     [Header("List of sounds")]
     [SerializeField] private Sound[] sounds;
-    public static AudioManager instance;
+    #region Singleton definition
+    private static AudioManager _instance;
+    public static AudioManager Instance { get { return _instance; } }
+    //Code to reference singleton: SceneChanger.Instance;
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
+    #endregion
 
     private Dictionary<string,Sound> soundsDictionary = new Dictionary<string, Sound>();
     #endregion
