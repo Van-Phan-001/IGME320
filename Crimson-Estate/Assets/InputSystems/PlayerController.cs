@@ -14,12 +14,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float interactRange = 10f;
 
     private InputManager inputManager;
+    private InteractionBrain interactionBrain;
     private Transform cameraTransform;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         inputManager = InputManager.Instance;
+        interactionBrain = InteractionBrain.Instance;
         cameraTransform = Camera.main.transform;
     }
 
@@ -51,7 +53,13 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log(hit.transform.name);
             }
-            
+        }
+
+        if (inputManager.Inventory())
+        {
+            Debug.Log("Inventory clicked");
+            interactionBrain.SwitchBrainState();
+
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;

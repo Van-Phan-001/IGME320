@@ -53,4 +53,9 @@ public class InputManager : MonoBehaviour
     {
         return playerControls.Player.Interact.triggered;
     }
+
+    public bool Inventory()
+    {
+        return playerControls.Player.Inventory.triggered;
+    }
 }
