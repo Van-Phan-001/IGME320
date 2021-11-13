@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
-    private static InputManager _instance;
-    public static InputManager Instance { get { return _instance; } }
+    
 
     private PlayerControls playerControls;
+
+    #region Singleton definition
+    private static InputManager _instance;
+    public static InputManager Instance { get { return _instance; } }
 
     private void Awake()
     {
@@ -20,9 +23,9 @@ public class InputManager : MonoBehaviour
             _instance = this;
         }
         playerControls = new PlayerControls();
-        //Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        
     }
+    #endregion
 
     private void OnEnable()
     {
@@ -33,6 +36,8 @@ public class InputManager : MonoBehaviour
     {
         playerControls.Disable();
     }
+
+    #region Input system returns
 
     public Vector2 GetPlayerMovement()
     {
@@ -58,4 +63,6 @@ public class InputManager : MonoBehaviour
     {
         return playerControls.Player.Inventory.triggered;
     }
+
+    #endregion
 }
