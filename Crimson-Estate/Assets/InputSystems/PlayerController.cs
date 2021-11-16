@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
         inputManager = InputManager.Instance;
         interactionBrain = InteractionBrain.Instance;
         cameraTransform = Camera.main.transform;
+
     }
 
     void Update()

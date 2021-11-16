@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 /// <summary>
 /// The inventory the contains all the abilities of the player
@@ -28,6 +28,7 @@ public class InteractionBrain : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         brainCanvas.SetActive(activeState);
     }
 
@@ -38,5 +39,7 @@ public class InteractionBrain : MonoBehaviour
     {
         activeState = !activeState;
         brainCanvas.SetActive(activeState);
+        if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Confined;
+        else if (Cursor.lockState == CursorLockMode.Confined) Cursor.lockState = CursorLockMode.Locked;
     }
 }
