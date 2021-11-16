@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// The inventory the contains all the abilities of the player
+/// </summary>
 public class InteractionBrain : MonoBehaviour
 {
     [SerializeField] private GameObject brainCanvas;

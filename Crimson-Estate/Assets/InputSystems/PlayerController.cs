@@ -23,7 +23,6 @@ public class PlayerController : MonoBehaviour
         inputManager = InputManager.Instance;
         interactionBrain = InteractionBrain.Instance;
         cameraTransform = Camera.main.transform;
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Update()
@@ -60,8 +59,6 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Inventory clicked");
             interactionBrain.SwitchBrainState();
-            if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.None;
-            if (Cursor.lockState == CursorLockMode.None) Cursor.lockState = CursorLockMode.Locked;
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
