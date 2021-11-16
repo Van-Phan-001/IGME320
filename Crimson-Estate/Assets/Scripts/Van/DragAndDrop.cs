@@ -9,9 +9,15 @@ public class DragAndDrop : MonoBehaviour, IDragHandler
     private RectTransform draggingObj;
     private Vector3 velocity = Vector3.zero;
 
+    private IdeaManager ideaManager;
     private void Awake()
     {
         draggingObj = transform as RectTransform;
+    }
+
+    private void Start()
+    {
+        ideaManager = IdeaManager.Instance;
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -21,8 +27,17 @@ public class DragAndDrop : MonoBehaviour, IDragHandler
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    Debug.Log($"This: {this.name}, Other: {collision.transform.name}");
+    //    //instantiate obj on collision if the combo exist
+
+    //    //ideaManager.CheckCombo(this.name, collision.transform.name);
+    //}
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log($"This: {this.name}, Other: {collision.transform.name}");
+        ideaManager.CheckCombo(this.name, collision.transform.name);
     }
 }
