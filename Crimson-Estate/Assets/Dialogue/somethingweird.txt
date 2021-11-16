@@ -1,0 +1,10 @@
+gate {
+    /SwitchTo Dresden
+    I wonder what wonderful things wait in store for me at this mansion!
+    /SwitchTo Stranger
+    Here's the key to open the gate...
+    /SwitchTo Dresden
+    About time I got some help around here!
+    /OpenDoor
+    Alright, let's do this!
+}
