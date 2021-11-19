@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class DialogueReader : MonoBehaviour
 {
-    [SerializeField]
-    public Dictionary<string, List<string>> responses;
-    [SerializeField]
-    public Dictionary<string, Dictionary<int, string[]>> commandDictionary;
-    Dictionary<int, string[]> commands;
-    [SerializeField]
-    string fileName;
+    private Dictionary<string, List<string>> responses;
+    private Dictionary<string, Dictionary<int, string[]>> commandDictionary;
+
+    private Dictionary<int, string[]> commands;
+
+    [Header("Name in dialogue folder")]
+    [SerializeField] private string fileName;
+
+    // ---------- Properties --------------
+    public Dictionary<string, List<string>> Responses { get { return responses; } }
+    public Dictionary<string, Dictionary<int, string[]>> Commands { get { return commandDictionary; } }
 
     enum Stages
     {
@@ -100,6 +104,6 @@ public class DialogueReader : MonoBehaviour
             // Create a new file at given location    
             FileStream fs = File.Create(fileName);
         }
-
+        Debug.Log("End deez");
     }
 }
