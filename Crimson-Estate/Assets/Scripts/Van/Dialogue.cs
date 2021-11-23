@@ -16,8 +16,6 @@ public class Dialogue : MonoBehaviour
             text.text = string.Empty;
             StartDialogue();
         }
-        
-        
     }
     void StartDialogue()
     {
