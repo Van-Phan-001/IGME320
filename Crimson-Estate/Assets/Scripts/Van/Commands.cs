@@ -37,7 +37,7 @@ public class Commands : MonoBehaviour
                     break;
             }
             index++;
-            index = Mathf.Clamp(index, 0, commands.Count);
+            index = Mathf.Clamp(index, 0, commands.Count - 1);
         }
         catch
         {
