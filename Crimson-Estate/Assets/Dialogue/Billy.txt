@@ -1,0 +1,55 @@
+introduction {
+	/SwitchTo Billy
+	Oh my gosh, are you Harry Dresden? I'm Billy! I've heard about you! You're so cool I can't believe I'm meeting you in person!
+	/SwitchTo Dresden
+	Haha, it's always nice to meet a fan. Tell me, have you seen anything suspicious going on recently?
+	/SwitchTo Billy
+	Nothing but a super lame party. Mom said something bad happened and that I can't use the bathroom anymore, but that's okay now that you're here!
+	/SwitchTo Dresden
+	Alright, I'll see you around, kiddo.
+	/SwitchTo Billy
+	Okay!
+	/Introduced
+	Bye!
+}
+
+metMaria {
+	/SwitchTo Dresden
+	Hey Billy, did you know Maria well?
+	/SwitchTo Billy
+	I did! She was super nice. Sometimes I'd help her and my Mom bake stuff and we'd have soooo much fun!
+	/SwitchTo Dresden
+	That's awesome Billy!
+	/SwitchTo Billy
+	Yup! Hey, I wonder when she'll be coming over.
+	/SwitchTo Dresden
+	...
+	I'm afraid she's going to be gone for a while. She's been... moved elsewhere.
+	/SwitchTo Billy
+	Oh, that's too bad.
+}
+
+metCasey {
+	/SwitchTo Dresden
+	So Billy, can you tell me anything about your sister?
+	/SwitchTo Billy
+	She's really scary! And mean! She never lets me go on her side of the room.
+	/SwitchTo Dresden
+	That is pretty mean of her.
+	/SwitchTo Billy
+	Yeah, I'm just glad she's been in her room all night.
+	/SwitchTo Dresden
+	Thanks, Billy.
+	/SwitchTo Billy
+	Anything for you!
+}
+
+badEvidence {
+	/SwitchTo Billy
+	Huh? What's that?
+}
+
+filler {
+	/SwitchTo Billy
+	Can I use the bathroom yet?
+}

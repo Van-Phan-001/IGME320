@@ -1,0 +1,95 @@
+introduction {
+	/SwitchTo Sherry
+	Waiter, get me another glass of wine! This whole situation is a total mess, it's giving me a headache.
+	/SwitchTo Dresden
+	(I think it's something else that's giving you the headache.) Hello there, and you are?
+	/SwitchTo Sherry
+	I'm Sherry, Barbara's sister. I suppose you want to question me about this whole ordeal?
+	Say, you're a wizard, aren't you? Do you think I would be able to use magic?
+	/SwitchTo Dresden
+	I doubt it. You'd have to go through a lot of training to refine it.
+	/SwitchTo Sherry
+	Oh, that's too bad. And I would have loved to be able to turn blood into wine.
+	/SwitchTo Dresden
+	Keep that up, and you'll be getting that wish sooner than you think.
+	(Blood into wine?)
+	/GiveIdea metSherry
+	(That's an interesting way to put it.)
+	/Introduced
+	(Maybe I should look into this more.)
+}
+
+metMaria {
+	/SwitchTo Dresden
+	Did you know anything about the victim, Maria?
+	/SwitchTo Sherry
+	I do! She was the worst. She always cut me off, even when I was totally fine! Can you believe the nerve? I won't miss her.
+	/SwitchTo Dresden
+	A little cruel, don't you think?
+	/SwitchTo Sherry
+	She was the cruel one.
+}
+
+metCasey {
+	/SwitchTo Dresden
+	How's your relationship with Casey?
+	/SwitchTo Sherry
+	I know she's my niece and all, but that girl is ghastly! I've seen her room once, and it nearly made me faint!
+	/SwitchTo Dresden
+	You sure it was the room and not your wine?
+	/Suggest("Check Casey's Room")
+}
+
+metEddie {
+	/SwitchTo Dresden
+	Any thoughts on Eddie?
+	/SwitchTo Sherry
+	Who is that?
+	/SwitchTo Dresden
+	Eddie is Casey's boyfriend.
+	/SwitchTo Sherry
+	Oh, I thought his name was Bennie! That boy is so pale, you know. He really needs to go out and get some sun.
+	/SwitchTo Dresden
+	Helpful as always.
+}
+
+fiveOClock {
+	/SwitchToDresden
+	So Sherry, I found this and I thought I would give it to you since you've been so helpful.
+	/SwitchTo Sherry
+	Dennis, you just became my new favorite person!
+	/SwitchTo Dresden
+	Dresden. And I can't say that's a title I'm happy about.
+	/GiveIdea wineTime
+}
+
+tornPages {
+	/SwitchTo Dresden
+	Sherry, I found these pages with arcane writing on them. Do they mean anything to you?
+	/SwitchTo Sherry
+	I have no idea what you're talking about, wizard.
+}
+
+roseAlchemy {
+	/SwitchTo Dresden
+	Sherry, what were you doing with pages from a necromancy tome?
+	/SwitchTo Sherry
+	Oh relax. I was bored so I decided to rummage through Casey's room.
+	/SwitchTo Dresden
+	Isn't that an invasion of privacy?
+	/SwitchTo Sherry
+	And what have you been doing?
+	Anyway, I pulled out a creepy book and looked through it, and bam! The thing said you could turn blood into wine. So I ripped it out in case it came in handy later.
+}
+
+badEvidence {
+	/SwitchTo Sherry
+	What? No, I don't know what that's about. Let a girl drink in peace, okay?
+}
+
+filler {
+	/SwitchTo Sherry
+	Would you like to have a drink?
+	/SwitchTo Dresden
+	I'll pass. I know better than to get in the way of a woman and her glass of wine.
+}

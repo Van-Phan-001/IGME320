@@ -1,0 +1,67 @@
+introduction {
+	/SwitchTo Casey
+	Huh? Oh, I'm Casey. Did you need something?
+	/SwitchTo Dresden
+	Yes, in fact, I do. I am investigating a murder and was wondering if you've seen anything suspicious.
+	/SwitchTo Casey
+	No I haven't, but I think she's lucky she got to die.
+	/SwitchTo Dresden
+	A little morbid, isn't it?
+	/SwitchTo Casey
+	And?	
+	/GiveIdea metCasey
+	You sound so lame.
+	/Introduced
+	Are we done here?
+}
+
+metMaria {
+	/SwitchTo Dresden
+	So Casey, how was your relationship with Maria?
+	/SwitchTo Casey
+	She was kind of annoying to be honest. I know, she's dead, be nice, blah blah blah. 
+	But she was always kind of rude to me. She always said I was sinning and that I was some sort of devil child.
+	/SwitchTo Dresden
+	Oh, well I'm sorry to hear that.
+	/SwitchTo Casey
+	Yeah, it's whatever I guess...
+}
+
+metEddie {
+	/SwitchTo Dresden
+	Eddie said that he has been with you all night. Can you confirm that?
+	/SwitchTo Casey
+	Yeah, basically.
+	/SwitchTo Dresden
+	What do you mean by basically?
+	/SwitchTo Casey
+	Well he took a while getting food and then he had to use the bathroom, but we've been hanging out basically all night.
+	/SwitchTo Dresden
+	Thanks for your help.
+	/SwitchTo Casey
+	ThAnKs foR yOuR hElp.
+}
+
+necromancyTome {
+	/SwitchTo Dresden
+	I found this in your room, can you explain it?
+	/SwitchTo Casey
+	It's an old book that I got as a gift, so what?
+	/SwitchTo Dresden
+	An old book about necromancy. Do you know how dangerous this is? 
+	You could get in serious trouble for practicing this. Who gave this to you anyway?
+	/SwitchTo Casey
+	Eddie gave it to me for my birthday. Besides, I know what I'm doing.
+	/GiveIdea birthdayGift
+	Did you come here to lecture me or to investigate a death?
+}
+
+badEvidence {
+	/SwitchTo Casey
+	Dunno. Now go away.
+}
+
+filler {
+	/SwitchTo Casey
+	Leave me alone.
+}

@@ -1,0 +1,114 @@
+introduction {
+	/SwitchTo Don
+	Thank you for coming. Just like the L train, you have arrived swiftly. 
+	My name is Donald Jameson Bartholomew, but you can call me Don.
+	/SwitchTo Dresden
+	It is a pleasure to meet you, Don. Now, have you seen anything suspicious leading up to the maid's death?
+	/SwitchTo Don
+	I haven't observed anything too dubious, but the state of the body is certainly something to stay cognizant of.
+	/SwitchTo Dresden
+	Thank you.
+	/Suggest("Check Maria's body")
+	I'll be sure to stay mindfully aware of those transgressions.
+	/Introduced
+	I'll let you know when there are new updates.
+}
+
+metMaria {
+	/SwitchTo Dresden
+	What can you tell me about Maria?
+	/SwitchTo Don
+	Honestly, she was quite the debauched character. She always seemed as though she were up to no good.
+	/SwitchTo Dresden
+	Interesting. 
+	/GiveIdea rockyRelationship
+	I will keep that noted.
+}
+
+conflictingRelationships {
+	/SwitchTo Dresden
+	So I spoke with Barbara, and it seems like she really liked Maria.
+	/SwitchTo Don
+	Alright, and?
+	/SwitchTo Dresden
+	Well, I was wondering why you had such a different opinion than her.
+	/SwitchTo Don
+	...
+	Honestly, I've never said this aloud but...
+	...
+	I fear that Barbara may have been unfaithful to me with Maria.
+	/SwitchTo Dresden
+	What makes you think that?
+	/SwitchTo Don
+	The two of them were always so close. I feared that Barbara would leave me for Maria, taking enough wealth with her to establish a new, extravagant life.
+	/SwitchTo Dresden
+	I'm sorry to hear that.
+	/GiveIdea crimsonLetter
+	But that certainly isn't a possibility anymore, I suppose.
+}
+
+needleTool {
+	/SwitchTo Dresden
+	Hey Don, I found this interesting object in your train room and I was wondering if you can tell me more about it.
+	/SwitchTo Don
+	Of course my dear detective! I use that tool to paint fine details onto my beloved trains. 
+	Its thinness allows for precise strokes that I otherwise would not be able to achieve!
+	/SwitchTo Dresden
+	Sounds useful.
+	/SwitchTo Don
+	It has been imported all the way from Brazil.
+	/UpdateIdea("Needle Tool")
+	It is of the highest quality.
+}
+
+scarletSplatters {
+	/SwitchTo Dresden
+	Don, why are there splatters of a red liquid covering your train room?
+	/SwitchTo Don
+	Oh that is quite simple, really. In anticipation of these festivities, I was spending some time in solitude painting my lovely model trains. 
+	Unfortunately, I jounced my desk and foolishly spilled some paint.
+	/UpdateIdea("Scarlet Splatters") 
+	Even more unfortunately, I did not have enough time to unsully my workspace prior to the guests' arrivals.
+	/SwitchTo Dresden
+	Wow, that really sounds like quite the mishap.
+	/SwitchTo Don
+	Indubitably.
+}
+
+metCasey {
+	/SwitchTo Dresden
+	So Casey is your daughter, right?
+	/SwitchTo Don
+	Indeed she is. The lass is the pride of my heart.
+	/SwitchTo Dresden
+	Why is she so... grim?
+	/SwitchTo Don
+	My dear has always been fascinated with the macabre, but I'm sure it's just a phase.
+	/Suggest("Check Casey's room")
+	You should see her room! It is quite a sinister sight.
+	/SwitchTo Dresden
+	Thanks for the tip.
+	
+}
+
+metEddie {
+	/SwitchTo Dresden
+	How do you feel about Eddie?
+	/SwitchTo Don
+	Why, Eddie is a fine young man. He is quite chivalrous with my daughter and is ever so polite around the rest of the family. 
+	In fact, he always waits at the door to be let in! What a spectacular display of manners!
+	/SwitchTo Dresden
+	Wow, he sounds too good to be true.
+}
+
+badEvidence {
+	/SwitchTo Don
+	Sorry, I don't believe I'll be able to help you with that. Best of luck to you, though.
+}
+
+filler {
+	/SwitchTo Don
+	Any new updates?
+	/SwitchTo Dresden
+	I'm working on it.
+}

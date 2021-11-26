@@ -1,0 +1,82 @@
+introduction {
+	/SwitchTo Sam
+	Yer Dresden, right? Welcome to ma' little establishment, pardner! The name's Sam, I'm Donny's old man, nice to meet ya.
+	/SwitchTo Dresden
+	Hello. I've noticed your mansion is rather... patriotic.
+	/SwitchTo Sam
+	That it is! Y'know, we've owned this land fer a long time, back when they were building that uh... Transchicago Railroad.
+	/SwitchTo Dresden
+	Transcontinental.
+	/SwitchTo Sam
+	Yes, that! 
+	/Introduced
+	Anyway, feel free to ask me any questions about this estate o' mine.
+}
+
+metMaria {
+	/SwitchTo Sam
+	It's a real shame to hear about what happened to the maid. She were always such a hard worker, y'know, even though she didn't do a great job.
+	I'm sure she would find peace in knowing her sacrifice was for the best, God bless.
+	/SwitchTo Dresden
+	...Sacrifice, you said?
+	/SwitchTo Sam
+	Well, you know how it is, pardner. Sometimes sacrifices hafta be made fer the greater good.
+	/SwitchTo Dresden
+	I suppose so.
+}
+
+metSherry {
+	/SwitchTo Dresden
+	I understand your daughter Sherry is a bit of a wine enthusiast.
+	/SwitchTo Sam
+	That she is! A small glass of wine in the evening is always great.
+	/SwitchTo Dresden
+	I think her enthusiasm goes past just a small glass.
+	/SwitchTo Sam
+	I'm just glad she's enjoying her life the way she do. Ya gotta find yer calling of yer own, y'know?
+	/SwitchTo Dresden
+	That's certainly an... optimistic view of it.
+}
+
+metCasey {
+	/SwitchTo Dresden
+	So, about Casey, your granddaughter...
+	/SwitchTo Sam
+	Casey, is it? Lemme tell ya, something ain't right about the girl. She's been going on about some dark magic.
+	/SwitchTo Dresden
+	You seem quite concerned. Do you know when this might have started?
+	/SwitchTo Sam
+	I reckon it has something to do with that flashy boy o' hers. You'd best be asking them about that, I don't got the slightest idea 'bout kids these days.
+	Y'know, back when I had to court my wife, I'd walk over the hills every day just to -
+	/SwitchTo Dresden
+	I'm afraid now's not the time.
+}
+
+bagsOfBlood {
+	/SwitchTo Dresden
+	I imagine you don't do much cooking around the house, but what sort of things have you been eating recently?
+	/SwitchTo Sam
+	I hope yer not tryin' to imply nothing about my eating habits, pardner.
+	/SwitchTo Dresden
+	I assure you, nothing of the sort. I was just wondering as I was walking around the kitchen and saw some bags of blood. Apparently Barbara was using them for cooking?
+	/SwitchTo Sam
+	Ah, those. Lemme tell ya, Barbara's always overspending importing some weird animal blood from somewhere over the seas.
+	/GiveIdea spendingHabits
+	Donny isn't too happy about her going on spending sprees all the time. You didn't hear this from me though, understand?
+	/SwitchTo Dresden
+	Naturally.
+}
+
+badEvidence {
+	/SwitchTo Sam
+	Whazzat? Sorry, my eyes aren't workin' so well nowadays. I don't got a clue about what's going on here.
+}
+
+filler {
+	/SwitchTo Sam
+	Did I ever tell you about that time I wrestled a bear? I was with my trusty bald eagle -
+	/SwitchTo Dresden
+	I'm sure this is a very interesting story, but right now I need to focus on the case.
+	/SwitchTo Sam
+	Ah, well. I'll tell you about it some other time then.
+}

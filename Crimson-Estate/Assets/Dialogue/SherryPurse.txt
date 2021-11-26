@@ -1,0 +1,25 @@
+introduction {
+	/SwitchTo Sherry
+	Hey! Don't touch!
+	/SwitchTo Dresden
+	(There might be something important in there.)
+	/Introduction
+	(I wonder if I can get something to distract her.)
+}
+
+wineTime {
+	/SwitchTo Dresden
+	While she's distracted, let's see here...
+	/GiveIdea tornPages
+	These pages have some strange arcane writing and look like they were torn out of a book. I'll hold onto these.
+}
+
+filler {
+	/SwitchTo Dresden
+	(I shouldn't try anything until I can distract Sherry.)
+}
+
+fillerPages {
+	/SwitchTo Dresden
+	(I don’t need to check this anymore.)
+}
