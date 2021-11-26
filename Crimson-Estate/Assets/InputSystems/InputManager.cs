@@ -64,5 +64,10 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Inventory.triggered;
     }
 
+    public bool Next()
+    {
+        return playerControls.Player.Next.triggered;
+    }
+
     #endregion
 }

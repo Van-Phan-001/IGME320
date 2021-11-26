@@ -13,14 +13,16 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private float textDelaySeconds = .1f;
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private List<string> spritesIDs;
-    
     [SerializeField] private Sprite defaultImage;
+
     //-------------------------------------------------------------
 
     private List<string> responses; //the responses grabbed from the current 
     private int sentenceIndex = 0; //which sentence should be written onto the writer 
     private bool writing = false; //used to prevent user from spamming sentence writer
     private Dictionary<string, Sprite> objImages; //images that we can switch to
+
+    public bool Writing { get { return writing; } }
 
 
 

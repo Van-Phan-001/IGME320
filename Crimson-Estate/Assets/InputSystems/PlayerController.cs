@@ -18,25 +18,43 @@ public class PlayerController : MonoBehaviour
     private InteractionBrain interactionBrain;
     private Transform cameraTransform;
     private Dialogue dialogue;
+    private Commands commands;
+
+    private bool uiCreated = false;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        inputManager = InputManager.Instance;
-        interactionBrain = InteractionBrain.Instance;
+
+
+        try {
+            inputManager = InputManager.Instance;
+            interactionBrain = InteractionBrain.Instance;
+        }
+        catch
+        {
+            Debug.Log("No UI setup");
+        }
+        
         cameraTransform = Camera.main.transform;
-        dialogue = raycastManager.Dialogue;
+        if(raycastManager != null)
+        {
+            dialogue = raycastManager.Dialogue;
+            commands = raycastManager.Commands;
+            uiCreated = true;
+        }
+        
 
     }
 
     void Update()
     {
+        // ---------------------- Movement logic --------------------------
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
-
         Vector2 movement = inputManager.GetPlayerMovement();
         Vector3 move = new Vector3(movement.x, 0f, movement.y);
         move.y = 0;
@@ -49,35 +67,57 @@ public class PlayerController : MonoBehaviour
         //{
         //    playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         //}
+        // -----------------------------------------------------------------
 
+        //When player presses interact, what we do with respect to what object we interact with
         if (inputManager.Interact())
         {
             RaycastHit hit;
-            if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, interactRange) && hit.transform != this.transform)
+            if (!dialogue.Writing)
             {
-                try
+                if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, interactRange) && hit.transform != this.transform)
                 {
-                    DialogueReader objDialogue = hit.transform.GetComponent<DialogueReader>();
-                    if (objDialogue.Responses.ContainsKey(raycastManager.currentAction)) //if the current action is an action available for our obj
+                    try
                     {
-                        //this assigns the dialogue system to use this new series of text
-                        dialogue.AssignNewResponse(objDialogue.Responses[raycastManager.currentAction]);
-
-                        //we do print sentence right away just for testing
-                        dialogue.PrintSentence();
+                        DialogueReader objDialogue = hit.transform.GetComponent<DialogueReader>();
+                        if (objDialogue.Responses.ContainsKey(raycastManager.currentAction)) //if the current action is an action available for our obj
+                        {
+                            //this assigns the dialogue system to use this new series of text
+                            string curr = raycastManager.currentAction;
+                            dialogue.AssignNewResponse(objDialogue.Responses[curr]);
+                            commands.AssignCommands(objDialogue.Commands[curr]);
+                            //we do print sentence right away just for testing
+                            dialogue.PrintSentence();
+                            commands.NextCommand();
+                        }
+                    }
+                    catch
+                    {
+                        Debug.Log($"Generic: {hit.transform.name}");
                     }
                 }
-                catch
-                {
-                    Debug.Log($"Generic: {hit.transform.name}");
-                }
             }
+            
         }
 
+        //When player opens the inventory
         if (inputManager.Inventory())
         {
             //Debug.Log("Inventory clicked");
-            interactionBrain.SwitchBrainState();
+            if(!dialogue.Writing) interactionBrain.SwitchBrainState();
+
+        }
+
+        if (inputManager.Next())
+        {
+            if(uiCreated)
+            {
+                if (!dialogue.Writing)
+                {
+                    dialogue.PrintSentence();
+                    commands.NextCommand();
+                }
+            }
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;

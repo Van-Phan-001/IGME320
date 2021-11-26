@@ -65,6 +65,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": ""Press(behavior=2)""
+                },
+                {
+                    ""name"": ""Next"",
+                    ""type"": ""Button"",
+                    ""id"": ""3cf61a17-f419-49d7-ab5b-4065ec659214"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -177,6 +185,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""OnPressed"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""72f0542b-7567-4e50-8eee-b49ab09a2d50"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Next"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -191,6 +210,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         m_Player_OnPressed = m_Player.FindAction("OnPressed", throwIfNotFound: true);
+        m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -246,6 +266,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_Inventory;
     private readonly InputAction m_Player_OnPressed;
+    private readonly InputAction m_Player_Next;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -256,6 +277,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputAction @OnPressed => m_Wrapper.m_Player_OnPressed;
+        public InputAction @Next => m_Wrapper.m_Player_Next;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -283,6 +305,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @OnPressed.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOnPressed;
                 @OnPressed.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOnPressed;
                 @OnPressed.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnOnPressed;
+                @Next.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNext;
+                @Next.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNext;
+                @Next.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNext;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -305,6 +330,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @OnPressed.started += instance.OnOnPressed;
                 @OnPressed.performed += instance.OnOnPressed;
                 @OnPressed.canceled += instance.OnOnPressed;
+                @Next.started += instance.OnNext;
+                @Next.performed += instance.OnNext;
+                @Next.canceled += instance.OnNext;
             }
         }
     }
@@ -317,5 +345,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnInteract(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnOnPressed(InputAction.CallbackContext context);
+        void OnNext(InputAction.CallbackContext context);
     }
 }
