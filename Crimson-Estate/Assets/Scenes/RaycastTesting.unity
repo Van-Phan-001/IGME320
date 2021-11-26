@@ -228,6 +228,8 @@ GameObject:
   - component: {fileID: 164904682}
   - component: {fileID: 164904681}
   - component: {fileID: 164904680}
+  - component: {fileID: 164904685}
+  - component: {fileID: 164904684}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -287,6 +289,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &164904684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164904679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c9d6ebd80cec8947b1538f71ca46ab5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &164904685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164904679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c78697b6c9284849a14e0065bd225d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 748959794}
+  commands: {fileID: 164904684}
+  dragIn: {fileID: 1226096643}
+--- !u!114 &748959794 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+  m_PrefabInstance: {fileID: 1722380151}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d03dd6bab62694e46bae607f7d1dfeb1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1195018774
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,6 +339,7 @@ GameObject:
   - component: {fileID: 1195018777}
   - component: {fileID: 1195018776}
   - component: {fileID: 1195018775}
+  - component: {fileID: 1195018779}
   m_Layer: 0
   m_Name: BigCube
   m_TagString: Untagged
@@ -376,12 +417,36 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195018774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 15}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1195018779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195018774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b7bfb8738c2954a854d28f92e07635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: somethingweird
+--- !u!114 &1226096643 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8018404016741825743, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+  m_PrefabInstance: {fileID: 1722380151}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55485ecf7ecc944abb4df01e1a00bf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1262471900
 GameObject:
   m_ObjectHideFlags: 0
@@ -394,6 +459,7 @@ GameObject:
   - component: {fileID: 1262471903}
   - component: {fileID: 1262471902}
   - component: {fileID: 1262471901}
+  - component: {fileID: 1262471905}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -478,6 +544,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1262471905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262471900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c78697b6c9284849a14e0065bd225d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
+  commands: {fileID: 0}
+  dragIn: {fileID: 0}
 --- !u!4 &1371004945 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5743562211070222358, guid: 77fc30129b154144ba46c27160cf8023, type: 3}
@@ -490,6 +571,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5743562210698362848, guid: 77fc30129b154144ba46c27160cf8023, type: 3}
+      propertyPath: raycastManager
+      value: 
+      objectReference: {fileID: 164904685}
     - target: {fileID: 5743562210698362850, guid: 77fc30129b154144ba46c27160cf8023, type: 3}
       propertyPath: m_Name
       value: Player

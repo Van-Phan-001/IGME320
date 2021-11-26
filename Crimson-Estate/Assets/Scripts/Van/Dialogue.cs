@@ -65,7 +65,7 @@ public class Dialogue : MonoBehaviour
     public void AssignNewResponse(List<string> a_lReponses)
     {
         sentenceIndex = 0;
-        responses = new List<string>(a_lReponses);
+        responses = a_lReponses;
     }
 
     /// <summary>

@@ -104,6 +104,6 @@ public class DialogueReader : MonoBehaviour
             // Create a new file at given location    
             FileStream fs = File.Create(fileName);
         }
-        Debug.Log("End deez");
+        //Debug.Log("End deez");
     }
 }
