@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
 
         if (inputManager.Inventory())
         {
-            Debug.Log("Inventory clicked");
+            //Debug.Log("Inventory clicked");
             interactionBrain.SwitchBrainState();
         }
 

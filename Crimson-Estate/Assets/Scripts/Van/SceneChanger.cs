@@ -33,13 +33,13 @@ public class SceneChanger : MonoBehaviour
     #endregion
 
     #region Functions
-    private void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            ToScene(1.0f,0);
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyUp(KeyCode.Escape))
+    //    {
+    //        ToScene(1.0f,0);
+    //    }
+    //}
 
     /// <summary>
     /// Coroutine to transition to another scene with a slight delay

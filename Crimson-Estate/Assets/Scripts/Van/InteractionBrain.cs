@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class InteractionBrain : MonoBehaviour
 {
     [SerializeField] private GameObject brainCanvas;
+    [SerializeField] private GameObject dialogue;
     private bool activeState = false;
+    private bool activeStateDialogue = true;
+
 
     #region Singleton definition
     private static InteractionBrain _instance;
@@ -37,9 +40,15 @@ public class InteractionBrain : MonoBehaviour
     /// </summary>
     public void SwitchBrainState()
     {
+        activeStateDialogue = !activeStateDialogue;
         activeState = !activeState;
         brainCanvas.SetActive(activeState);
+        dialogue.SetActive(activeStateDialogue);
+
+        //determines whether mouse free floats for inventory or locked in middle for player controls
         if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Confined;
         else if (Cursor.lockState == CursorLockMode.Confined) Cursor.lockState = CursorLockMode.Locked;
+
+        Debug.Log($"Dialogue: {activeStateDialogue} Ideas: {activeState}");
     }
 }
