@@ -31,6 +31,9 @@ public class Commands : MonoBehaviour
                 case "GiveIdea": //Adds this idea to the mind palace
                     Debug.Log($"Giving idea: {commands[index][1]}");
                     break;
+                case "UpdateIdea": //Updates the respective idea
+                    Debug.Log($"Updating idea: {commands[index][1]}");
+                    break;
                 case "SwitchTo": //Switches the image in dialogue to whoever is currently speaking
                     Debug.Log($"Switch to:  {commands[index][1]}");
                     break;
