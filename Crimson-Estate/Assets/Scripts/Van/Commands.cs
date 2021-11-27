@@ -28,12 +28,23 @@ public class Commands : MonoBehaviour
             string command = commands[index][0]; //The first string in our string index is a command
             switch (command)
             {
-                case "GiveIdea":
-                    Debug.Log("Giving idea: ");
+                case "GiveIdea": //Adds this idea to the mind palace
+                    Debug.Log($"Giving idea: {commands[index][1]}");
                     break;
-
-                default:
-                    Debug.Log($"Command: {command}");
+                case "SwitchTo": //Switches the image in dialogue to whoever is currently speaking
+                    Debug.Log($"Switch to:  {commands[index][1]}");
+                    break;
+                case "Introduced": //Sets introduced to true for the obj we're talking to
+                    Debug.Log("Introduced");
+                    break;
+                case "Suggest": //Displays a suggestion on the top right of screen
+                    Debug.Log($"Suggesting: {commands[index][1]}");
+                    break;
+                case "OpenDoor": //Open door animation plus go into next scene after a while
+                    Debug.Log("Opening door");
+                    break;
+                default: //Runs filler text dialogue if there is any
+                    Debug.Log($"Command: {commands[index][0]}");
                     break;
             }
             index++;
