@@ -51,7 +51,7 @@ public class DialogueReader : MonoBehaviour
                         {
                             // set our temp key and start finding sentances
                             currentLine = currentLine.Replace("{", " ");
-                            currentLine = currentLine.Trim().ToLower();
+                            currentLine = currentLine.Trim();
                             tempKey = currentLine;
                             tempMessages = new List<string>();
                             messageIndex = -1;

@@ -49,7 +49,7 @@ public class IdeaManager : MonoBehaviour
         createdIdeas = new Dictionary<string, GameObject>();
 
         // Read all possible cominations
-        List<string> combos = dr.Responses["combos"];
+        List<string> combos = dr.Responses["Combos"];
         int i = 0;
         while (i < combos.Count)
         {
