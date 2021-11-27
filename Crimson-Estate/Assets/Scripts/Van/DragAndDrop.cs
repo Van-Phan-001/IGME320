@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
 public class DragAndDrop : MonoBehaviour, IDragHandler
 {
     [Header("Properties")]
     [SerializeField][Range(0, 1.0f)] private float dampingSpeed = .05f; //applies a dampened delay to movement
+    [SerializeField] private Text text;
 
     private RectTransform draggingObj;
     private Vector3 velocity = Vector3.zero;
