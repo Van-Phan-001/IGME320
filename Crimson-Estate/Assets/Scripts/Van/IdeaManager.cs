@@ -21,6 +21,8 @@ public class IdeaManager : MonoBehaviour
     /// </summary>
     private Dictionary<string, GameObject> createdIdeas;
 
+    private DialogueReader dr;
+
     #region Singleton definition
     private static IdeaManager _instance;
     public static IdeaManager Instance { get { return _instance; } }
@@ -41,9 +43,19 @@ public class IdeaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dr = GetComponent<DialogueReader>();
         // ----------Instatiate objects -----------------
         combinations = new Dictionary<string, string>();
         createdIdeas = new Dictionary<string, GameObject>();
+
+        // Read all possible cominations
+        List<string> combos = dr.Responses["combos"];
+        int i = 0;
+        while (i < combos.Count)
+        {
+            AddCombo(combos[i], combos[i + 1], combos[i + 2]);
+            i += 3;
+        }
 
         // ------ Hardcoded combinations ----------------
         AddCombo("Obj", "Obj2", "Obj3");

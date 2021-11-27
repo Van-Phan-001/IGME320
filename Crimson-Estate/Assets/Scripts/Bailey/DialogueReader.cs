@@ -16,6 +16,8 @@ public class DialogueReader : MonoBehaviour
     [Header("Is this being used to read ideas from txt files?")]
     [SerializeField] private bool ideaReading;
 
+    public bool hasIntroduced;
+
     // ---------- Properties --------------
     public Dictionary<string, List<string>> Responses { get { return responses; } }
     public Dictionary<string, Dictionary<int, string[]>> Commands { get { return commandDictionary; } }

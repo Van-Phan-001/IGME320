@@ -1,0 +1,12 @@
+Sample {
+	This is the description of the object, on one line.
+	This is the "upgraded" description, on one line.
+}
+Combos {
+	Something
+	Rather
+	Something Or Rather
+	A Rock
+	Some Keys
+	Eviction Notice
+}
