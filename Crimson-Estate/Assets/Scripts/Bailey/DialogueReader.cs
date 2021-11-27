@@ -13,9 +13,13 @@ public class DialogueReader : MonoBehaviour
     [Header("Name in dialogue folder")]
     [SerializeField] private string fileName;
 
+    [Header("Is this being used to read ideas from txt files?")]
+    [SerializeField] private bool ideaReading;
+
     // ---------- Properties --------------
     public Dictionary<string, List<string>> Responses { get { return responses; } }
     public Dictionary<string, Dictionary<int, string[]>> Commands { get { return commandDictionary; } }
+    public bool IdeaReading { get { return ideaReading; } }
 
     enum Stages
     {
