@@ -49,7 +49,7 @@ public class IdeaManager : MonoBehaviour
         createdIdeas = new Dictionary<string, GameObject>();
 
         // Read all possible cominations
-        List<string> combos = dr.Responses["combos"];
+        List<string> combos = dr.Responses["Combos"];
         int i = 0;
         while (i < combos.Count)
         {
@@ -85,7 +85,7 @@ public class IdeaManager : MonoBehaviour
     /// Adds an idea of the given tag into the brain directly
     /// </summary>
     public void CreateIdea(string a_sIdeaName = "Default")
-    {
+    {s
         if (createdIdeas.ContainsKey(a_sIdeaName) == false) // If the object doesn't already exist 
         {
             Debug.Log($"Created {a_sIdeaName}");
