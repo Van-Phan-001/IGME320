@@ -20,11 +20,11 @@ public class @PlayerControls : IInputActionCollection, IDisposable
             ""actions"": [
                 {
                     ""name"": ""Movement"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""f8d9f5af-8d7d-4f67-b50e-ac34b2a5faa1"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Hold(duration=0.001)""
                 },
                 {
                     ""name"": ""Jump"",
@@ -73,6 +73,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""InteractHold"",
+                    ""type"": ""Button"",
+                    ""id"": ""dead54d7-0c6f-4647-a227-1123bcba8fbe"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": ""Hold""
                 }
             ],
             ""bindings"": [
@@ -196,6 +204,17 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Next"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a501c1f-aa19-43e0-a5d5-4f6583fdfb39"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""InteractHold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -211,6 +230,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Player_Inventory = m_Player.FindAction("Inventory", throwIfNotFound: true);
         m_Player_OnPressed = m_Player.FindAction("OnPressed", throwIfNotFound: true);
         m_Player_Next = m_Player.FindAction("Next", throwIfNotFound: true);
+        m_Player_InteractHold = m_Player.FindAction("InteractHold", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -267,6 +287,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_Inventory;
     private readonly InputAction m_Player_OnPressed;
     private readonly InputAction m_Player_Next;
+    private readonly InputAction m_Player_InteractHold;
     public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
@@ -278,6 +299,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Inventory => m_Wrapper.m_Player_Inventory;
         public InputAction @OnPressed => m_Wrapper.m_Player_OnPressed;
         public InputAction @Next => m_Wrapper.m_Player_Next;
+        public InputAction @InteractHold => m_Wrapper.m_Player_InteractHold;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -308,6 +330,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Next.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNext;
                 @Next.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNext;
                 @Next.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnNext;
+                @InteractHold.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractHold;
+                @InteractHold.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractHold;
+                @InteractHold.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteractHold;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -333,6 +358,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Next.started += instance.OnNext;
                 @Next.performed += instance.OnNext;
                 @Next.canceled += instance.OnNext;
+                @InteractHold.started += instance.OnInteractHold;
+                @InteractHold.performed += instance.OnInteractHold;
+                @InteractHold.canceled += instance.OnInteractHold;
             }
         }
     }
@@ -346,5 +374,6 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnInventory(InputAction.CallbackContext context);
         void OnOnPressed(InputAction.CallbackContext context);
         void OnNext(InputAction.CallbackContext context);
+        void OnInteractHold(InputAction.CallbackContext context);
     }
 }

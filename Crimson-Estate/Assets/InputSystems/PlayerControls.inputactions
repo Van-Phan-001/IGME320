@@ -7,11 +7,11 @@
             "actions": [
                 {
                     "name": "Movement",
-                    "type": "PassThrough",
+                    "type": "Button",
                     "id": "f8d9f5af-8d7d-4f67-b50e-ac34b2a5faa1",
-                    "expectedControlType": "Vector2",
+                    "expectedControlType": "Button",
                     "processors": "",
-                    "interactions": ""
+                    "interactions": "Hold(duration=0.001)"
                 },
                 {
                     "name": "Jump",
@@ -60,6 +60,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "InteractHold",
+                    "type": "Button",
+                    "id": "dead54d7-0c6f-4647-a227-1123bcba8fbe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "Hold"
                 }
             ],
             "bindings": [
@@ -181,6 +189,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Next",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3a501c1f-aa19-43e0-a5d5-4f6583fdfb39",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "InteractHold",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

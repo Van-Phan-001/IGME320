@@ -10,7 +10,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private Text text; //The text component where the current sentence should be displayed
     [SerializeField] private Image image; //The image component for what/who is currently talking
     [SerializeField] private string sentence = "Default sentence"; //current sentence to be written out
-    [SerializeField] private float textDelaySeconds = .1f;
+    [SerializeField] private float textDelaySeconds = .4f;
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private List<string> spritesIDs;
     [SerializeField] private Sprite defaultImage;
@@ -21,13 +21,17 @@ public class Dialogue : MonoBehaviour
     private int sentenceIndex = 0; //which sentence should be written onto the writer 
     private bool writing = false; //used to prevent user from spamming sentence writer
     private Dictionary<string, Sprite> objImages; //images that we can switch to
+    private bool inDialogue = false;
+    private float defaultDelay = .1f;
+    private InputManager inputManager;
 
     public bool Writing { get { return writing; } }
-
+    public bool InDialogue { get { return inDialogue; } }
 
 
     private void Start()
     {
+        inputManager = InputManager.Instance;
         //if (text != null)
         //{
         //    text.text = string.Empty;
@@ -39,6 +43,14 @@ public class Dialogue : MonoBehaviour
 
         if(objImages == null) objImages = new Dictionary<string, Sprite>();
         AssignSpritesWithIDs();
+    }
+
+    /// <summary>
+    /// Temporarily sets the speed, smaller being faster, the default being .1f
+    /// </summary>
+    public void ChangePrintSpeed(float a_fNewSpeed)
+    {
+        textDelaySeconds = a_fNewSpeed;
     }
 
     /// <summary>
@@ -75,13 +87,25 @@ public class Dialogue : MonoBehaviour
     /// </summary>
     public void PrintSentence()
     {
-        if (writing == false)
+        if (sentenceIndex == responses.Count - 1) //if we are at the end of our dialogue, in dialogue is false
         {
-            text.text = ""; //Clear text before printing out sentence
-            StartDialogue(responses[sentenceIndex]);
-            sentenceIndex++;
-            sentenceIndex = Mathf.Clamp(sentenceIndex, 0, responses.Count - 1);
+            inDialogue = false;
+            return;
         }
+        else
+        {
+            inDialogue = true;
+            if (writing == false)
+            {
+                textDelaySeconds = defaultDelay;
+                text.text = ""; //Clear text before printing out sentence
+                StartDialogue(responses[sentenceIndex]);
+                sentenceIndex++;
+                sentenceIndex = Mathf.Clamp(sentenceIndex, 0, responses.Count - 1);
+            }
+        }
+
+        
     }
 
     /// <summary>
@@ -101,8 +125,20 @@ public class Dialogue : MonoBehaviour
         writing = true;
         foreach (char c in sentence)
         {
+            
             text.text += c;
-            yield return new WaitForSeconds(textDelaySeconds);
+            //if (inputManager.InteractHold()) Debug.Log("Holding text");//ChangePrintSpeed(textDelaySeconds /= 10f);
+            if (!inputManager.InteractHold())
+            {
+                yield return new WaitForSeconds(textDelaySeconds);
+            }
+            else
+            {
+                Debug.Log("Holding e");
+                yield return new WaitForSeconds(textDelaySeconds/10);
+            }
+            
+            
         }
         writing = false;
     }

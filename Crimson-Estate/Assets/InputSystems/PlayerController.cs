@@ -24,11 +24,11 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        inputManager = InputManager.Instance;
         controller = GetComponent<CharacterController>();
 
 
         try {
-            inputManager = InputManager.Instance;
             interactionBrain = InteractionBrain.Instance;
         }
         catch
@@ -49,25 +49,29 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // ---------------------- Movement logic --------------------------
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+
+        if (!dialogue.InDialogue) //disable movement when in dialogue
         {
-            playerVelocity.y = 0f;
+            // ---------------------- Movement logic --------------------------
+            groundedPlayer = controller.isGrounded;
+            if (groundedPlayer && playerVelocity.y < 0)
+            {
+                playerVelocity.y = 0f;
+            }
+            Vector2 movement = inputManager.GetPlayerMovement();
+            Vector3 move = new Vector3(movement.x, 0f, movement.y);
+            move.y = 0;
+            move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
+
+            controller.Move(move * Time.deltaTime * playerSpeed);
+
+            // Changes the height position of the player..
+            //if (inputManager.PlayerJumped() && groundedPlayer)
+            //{
+            //    playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            //}
+            // -----------------------------------------------------------------
         }
-        Vector2 movement = inputManager.GetPlayerMovement();
-        Vector3 move = new Vector3(movement.x, 0f, movement.y);
-        move.y = 0;
-        move = cameraTransform.forward * move.z + cameraTransform.right * move.x;
-
-        controller.Move(move * Time.deltaTime * playerSpeed);
-
-        // Changes the height position of the player..
-        //if (inputManager.PlayerJumped() && groundedPlayer)
-        //{
-        //    playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
-        //}
-        // -----------------------------------------------------------------
 
         //When player presses interact, what we do with respect to what object we interact with
         if (inputManager.Interact())
@@ -99,7 +103,7 @@ public class PlayerController : MonoBehaviour
             }
             
         }
-
+        if (inputManager.InteractHold()) Debug.Log("Holding main");
         //When player opens the inventory
         if (inputManager.Inventory())
         {

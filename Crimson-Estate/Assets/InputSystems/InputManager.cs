@@ -69,5 +69,10 @@ public class InputManager : MonoBehaviour
         return playerControls.Player.Next.triggered;
     }
 
+    public bool InteractHold()
+    {
+        return playerControls.Player.InteractHold.triggered;
+    }
+
     #endregion
 }
