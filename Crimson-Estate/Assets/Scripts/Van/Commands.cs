@@ -6,6 +6,7 @@ public class Commands : MonoBehaviour
 {
     private Dictionary<int, string[]> commands;
     int index = 0;
+    private bool commandsDone = false; 
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,7 @@ public class Commands : MonoBehaviour
 
     public void AssignCommands(Dictionary<int, string[]> a_commands)
     {
+        commandsDone = false;
         commands = a_commands;
         index = 0;
     }
@@ -25,6 +27,7 @@ public class Commands : MonoBehaviour
     {
         try
         {
+            if (commandsDone) return;
             string command = commands[index][0]; //The first string in our string index is a command
             switch (command)
             {
@@ -52,6 +55,10 @@ public class Commands : MonoBehaviour
             }
             index++;
             index = Mathf.Clamp(index, 0, commands.Count - 1);
+            if(index == commands.Count - 1)
+            {
+                commandsDone = true;
+            }
         }
         catch
         {

@@ -87,7 +87,7 @@ public class Dialogue : MonoBehaviour
     /// </summary>
     public void PrintSentence()
     {
-        if (sentenceIndex == responses.Count - 1) //if we are at the end of our dialogue, in dialogue is false
+        if (sentenceIndex >= responses.Count - 1) //if we are at the end of our dialogue, in dialogue is false
         {
             inDialogue = false;
             return;
@@ -101,7 +101,7 @@ public class Dialogue : MonoBehaviour
                 text.text = ""; //Clear text before printing out sentence
                 StartDialogue(responses[sentenceIndex]);
                 sentenceIndex++;
-                sentenceIndex = Mathf.Clamp(sentenceIndex, 0, responses.Count - 1);
+                //sentenceIndex = Mathf.Clamp(sentenceIndex, 0, responses.Count - 1);
             }
         }
 
