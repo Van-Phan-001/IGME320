@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public DialogueReader objDialogue;
+
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -77,7 +79,20 @@ public class PlayerController : MonoBehaviour
         if (inputManager.Interact())
         {
             RaycastHit hit;
-            if (!dialogue.Writing)
+            if (dialogue.InDialogue)
+            {
+                if (!dialogue.Writing)
+                {
+                    dialogue.PrintSentence();
+                    commands.NextCommand();
+                }
+                else
+                {
+                    dialogue.ChangePrintSpeed(0f);
+                }
+            
+            }
+            if (!dialogue.Writing && !dialogue.InDialogue)
             {
                 if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, interactRange) && hit.transform != this.transform)
                 {
@@ -132,18 +147,18 @@ public class PlayerController : MonoBehaviour
             if(!dialogue.Writing) interactionBrain.SwitchBrainState();
 
         }
-
-        if (inputManager.Next())
-        {
-            if(uiCreated)
-            {
-                if (!dialogue.Writing)
-                {
-                    dialogue.PrintSentence();
-                    commands.NextCommand();
-                }
-            }
-        }
+        //*
+        //if (inputManager.Next())
+        //{
+        //    if(uiCreated)
+        //    {
+        //        if (!dialogue.Writing)
+        //        {
+        //            dialogue.PrintSentence();
+        //            commands.NextCommand();
+        //        }
+        //    }
+        //}
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);

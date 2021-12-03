@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b7bfb8738c2954a854d28f92e07635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fileName: somethingweird
+  fileName: Eddie
   ideaReading: 0
   hasIntroduced: 0
 --- !u!114 &1226096643 stripped

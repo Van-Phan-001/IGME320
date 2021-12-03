@@ -41,6 +41,7 @@ public class Commands : MonoBehaviour
                     Debug.Log($"Switch to:  {commands[index][1]}");
                     break;
                 case "Introduced": //Sets introduced to true for the obj we're talking to
+
                     Debug.Log("Introduced");
                     break;
                 case "Suggest": //Displays a suggestion on the top right of screen
