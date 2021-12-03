@@ -721,11 +721,27 @@ MonoBehaviour:
     long sentence I decided to type for no reason. '
   textDelaySeconds: 0.1
   sprites:
-  - {fileID: 21300000, guid: ac2ab9bdc3c89f24b82aed850156143a, type: 3}
+  - {fileID: 21300000, guid: 35eccb645d2f5484dac85b093301e0a0, type: 3}
   - {fileID: 21300000, guid: e2a5ec5ad31599e44a523a0bbefc0c2a, type: 3}
+  - {fileID: 21300000, guid: 4c554f339d7fcfa488b4c12eb1d402a8, type: 3}
+  - {fileID: 21300000, guid: b5b5fa8a9a481064b871b7574a154a97, type: 3}
+  - {fileID: 21300000, guid: 8387039defe58ea49ac4dbbf3b803d53, type: 3}
+  - {fileID: 21300000, guid: 4ae8fa26c5ba60a499c69025b098c590, type: 3}
+  - {fileID: 21300000, guid: 730278a1472569f44a93a2bd0f9d78ac, type: 3}
+  - {fileID: 21300000, guid: 8e25e2649bb9b6d409c3d9da9aa4e813, type: 3}
+  - {fileID: 21300000, guid: 9a05c71b0a410524ea56b1ad79ede2d5, type: 3}
+  - {fileID: 21300000, guid: 2cfe55fd373b3bf4398616a9c347e19c, type: 3}
   spritesIDs:
   - Default
   - Ooof
+  - Barbara
+  - Billy
+  - Casey
+  - Don
+  - Dresden
+  - Eddie
+  - Sam
+  - Sherry
   defaultImage: {fileID: 21300000, guid: e2a5ec5ad31599e44a523a0bbefc0c2a, type: 3}
   animator: {fileID: 8227230901613052869}
 --- !u!95 &8227230901613052869
