@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Commands : MonoBehaviour
 {
+    private IdeaManager id = FindObjectOfType<IdeaManager>();
     private Dictionary<int, string[]> commands;
     int index = 0;
     private bool commandsDone = false; 
@@ -32,17 +33,20 @@ public class Commands : MonoBehaviour
             switch (command)
             {
                 case "GiveIdea": //Adds this idea to the mind palace
+                    id.CreateIdea(commands[index][1]);
                     Debug.Log($"Giving idea: {commands[index][1]}");
                     break;
                 case "UpdateIdea": //Updates the respective idea
+                    id.UpdateIdea(commands[index][1]);
                     Debug.Log($"Updating idea: {commands[index][1]}");
                     break;
                 case "SwitchTo": //Switches the image in dialogue to whoever is currently speaking
                     Debug.Log($"Switch to:  {commands[index][1]}");
                     break;
                 case "Introduced": //Sets introduced to true for the obj we're talking to
-
-                    Debug.Log("Introduced");
+                    DialogueReader dr = FindObjectOfType<PlayerController>().objDialogue;
+                    dr.hasIntroduced = true;
+                    Debug.Log("Current Dialogue has introduced themself!");
                     break;
                 case "Suggest": //Displays a suggestion on the top right of screen
                     Debug.Log($"Suggesting: {commands[index][1]}");

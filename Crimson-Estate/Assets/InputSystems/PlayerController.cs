@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
                     try
                     {
                         string curr = null;
-                        DialogueReader objDialogue = hit.transform.GetComponent<DialogueReader>();
+                        objDialogue = hit.transform.GetComponent<DialogueReader>();
                         if (objDialogue.Responses.ContainsKey(raycastManager.currentAction)) //if the current action is an action available for our obj
                         {
                             //this assigns the dialogue system to use this new series of text
