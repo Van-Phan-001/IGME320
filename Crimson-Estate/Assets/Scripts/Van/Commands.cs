@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Commands : MonoBehaviour
 {
-    private IdeaManager id = FindObjectOfType<IdeaManager>();
+    private IdeaManager id;
     private Dictionary<int, string[]> commands;
     int index = 0;
     private bool commandsDone = false; 
@@ -26,6 +26,7 @@ public class Commands : MonoBehaviour
     /// </summary>
     public void NextCommand()
     {
+        id = FindObjectOfType<IdeaManager>();
         try
         {
             if (commandsDone) return;

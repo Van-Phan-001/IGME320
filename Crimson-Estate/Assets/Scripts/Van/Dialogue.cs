@@ -93,7 +93,7 @@ public class Dialogue : MonoBehaviour
     /// </summary>
     public void PrintSentence()
     {
-        if (sentenceIndex >= responses.Count - 1) //if we are at the end of our dialogue, in dialogue is false
+        if (sentenceIndex > responses.Count - 1) //if we are at the end of our dialogue, in dialogue is false
         {
             inDialogue = false;
             animator.SetTrigger("Close");

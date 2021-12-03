@@ -79,19 +79,6 @@ public class PlayerController : MonoBehaviour
         if (inputManager.Interact())
         {
             RaycastHit hit;
-            if (dialogue.InDialogue)
-            {
-                if (!dialogue.Writing)
-                {
-                    dialogue.PrintSentence();
-                    commands.NextCommand();
-                }
-                else
-                {
-                    dialogue.ChangePrintSpeed(0f);
-                }
-            
-            }
             if (!dialogue.Writing && !dialogue.InDialogue)
             {
                 if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, interactRange) && hit.transform != this.transform)
@@ -137,7 +124,19 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
-            
+            if (dialogue.InDialogue)
+            {
+                if (!dialogue.Writing)
+                {
+                    dialogue.PrintSentence();
+                    commands.NextCommand();
+                }
+                else
+                {
+                    dialogue.ChangePrintSpeed(0f);
+                }
+            }
+
         }
         if (inputManager.InteractHold()) Debug.Log("Holding main");
         //When player opens the inventory
