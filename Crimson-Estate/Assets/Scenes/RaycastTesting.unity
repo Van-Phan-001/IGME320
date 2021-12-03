@@ -722,6 +722,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960344, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -1112
+      objectReference: {fileID: 0}
     - target: {fileID: 8018404016741825743, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
       propertyPath: raycastManager
       value: 

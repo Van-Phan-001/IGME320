@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Animations;
 
 public class Dialogue : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private List<string> spritesIDs;
     [SerializeField] private Sprite defaultImage;
+    [SerializeField] private Animator animator;
 
     //-------------------------------------------------------------
 
@@ -82,6 +84,8 @@ public class Dialogue : MonoBehaviour
     {
         sentenceIndex = 0;
         responses = a_lReponses;
+        animator.SetTrigger("Open");
+        
     }
 
     /// <summary>
@@ -92,6 +96,7 @@ public class Dialogue : MonoBehaviour
         if (sentenceIndex >= responses.Count - 1) //if we are at the end of our dialogue, in dialogue is false
         {
             inDialogue = false;
+            animator.SetTrigger("Close");
             return;
         }
         else
