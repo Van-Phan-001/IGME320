@@ -347,6 +347,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: somethingweird
+  ideaReading: 0
+  hasIntroduced: 0
 --- !u!114 &1226096643 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8018404016741825743, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}

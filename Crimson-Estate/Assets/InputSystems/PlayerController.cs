@@ -83,17 +83,38 @@ public class PlayerController : MonoBehaviour
                 {
                     try
                     {
+                        string curr = null;
                         DialogueReader objDialogue = hit.transform.GetComponent<DialogueReader>();
                         if (objDialogue.Responses.ContainsKey(raycastManager.currentAction)) //if the current action is an action available for our obj
                         {
                             //this assigns the dialogue system to use this new series of text
-                            string curr = raycastManager.currentAction;
-                            dialogue.AssignNewResponse(objDialogue.Responses[curr]);
-                            commands.AssignCommands(objDialogue.Commands[curr]);
-                            //we do print sentence right away just for testing
-                            dialogue.PrintSentence();
-                            commands.NextCommand();
+                            curr = raycastManager.currentAction;
                         }
+                        // if not, check for other cases
+                        // introduction
+                        else if (raycastManager.currentAction == "" && objDialogue.Responses.ContainsKey("introduction") && !objDialogue.hasIntroduced)
+                        {
+                            curr = "introduction";
+                            objDialogue.hasIntroduced = true;
+                        }
+                        // default filler afterwards
+                        else if (raycastManager.currentAction == "" && objDialogue.Responses.ContainsKey("filler") && objDialogue.hasIntroduced)
+                        {
+                            //this assigns the dialogue system to use this new series of text
+                            curr = "filler";
+                        }
+                        // bad evidence
+                        else if (objDialogue.Responses.ContainsKey("badEvidence"))
+                        {
+                            curr = "badEvidence";
+                        }
+
+                        // will catch if theres actually nothing to say.
+                        dialogue.AssignNewResponse(objDialogue.Responses[curr]);
+                        commands.AssignCommands(objDialogue.Commands[curr]);
+                        //we do print sentence right away just for testing
+                        dialogue.PrintSentence();
+                        commands.NextCommand();
                     }
                     catch
                     {
