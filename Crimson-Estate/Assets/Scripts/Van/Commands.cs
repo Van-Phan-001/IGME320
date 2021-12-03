@@ -6,6 +6,7 @@ public class Commands : MonoBehaviour
 {
     private IdeaManager id;
     private Dictionary<int, string[]> commands;
+    [SerializeField] private Dialogue dialogue;
     int index = 0;
     private bool commandsDone = false; 
     // Start is called before the first frame update
@@ -43,6 +44,7 @@ public class Commands : MonoBehaviour
                     break;
                 case "SwitchTo": //Switches the image in dialogue to whoever is currently speaking
                     Debug.Log($"Switch to:  {commands[index][1]}");
+                    dialogue.AssignImage(commands[index][1]);
                     break;
                 case "Introduced": //Sets introduced to true for the obj we're talking to
                     DialogueReader dr = FindObjectOfType<PlayerController>().objDialogue;
