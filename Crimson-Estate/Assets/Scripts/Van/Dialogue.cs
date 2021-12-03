@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Animations;
 
 public class Dialogue : MonoBehaviour
 {
@@ -10,16 +11,18 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private Text text; //The text component where the current sentence should be displayed
     [SerializeField] private Image image; //The image component for what/who is currently talking
     [SerializeField] private string sentence = "Default sentence"; //current sentence to be written out
-    [SerializeField] private float textDelaySeconds = .4f;
+    [SerializeField] private float textDelaySeconds = .1f;
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private List<string> spritesIDs;
     [SerializeField] private Sprite defaultImage;
+    [SerializeField] private Animator animator;
 
     //-------------------------------------------------------------
 
     private List<string> responses; //the responses grabbed from the current 
     private int sentenceIndex = 0; //which sentence should be written onto the writer 
     private bool writing = false; //used to prevent user from spamming sentence writer
+    
     private Dictionary<string, Sprite> objImages; //images that we can switch to
     private bool inDialogue = false;
     private float defaultDelay = .1f;
@@ -27,6 +30,7 @@ public class Dialogue : MonoBehaviour
 
     public bool Writing { get { return writing; } }
     public bool InDialogue { get { return inDialogue; } }
+    private bool speedUp = false;
 
 
     private void Start()
@@ -80,6 +84,8 @@ public class Dialogue : MonoBehaviour
     {
         sentenceIndex = 0;
         responses = a_lReponses;
+        animator.SetTrigger("Open");
+        
     }
 
     /// <summary>
@@ -87,9 +93,10 @@ public class Dialogue : MonoBehaviour
     /// </summary>
     public void PrintSentence()
     {
-        if (sentenceIndex >= responses.Count - 1) //if we are at the end of our dialogue, in dialogue is false
+        if (sentenceIndex > responses.Count - 1) //if we are at the end of our dialogue, in dialogue is false
         {
             inDialogue = false;
+            animator.SetTrigger("Close");
             return;
         }
         else
@@ -123,23 +130,22 @@ public class Dialogue : MonoBehaviour
     IEnumerator TypeLine()
     {
         writing = true;
-        foreach (char c in sentence)
+        foreach (char c in sentence.ToCharArray())
         {
-            
             text.text += c;
-            //if (inputManager.InteractHold()) Debug.Log("Holding text");//ChangePrintSpeed(textDelaySeconds /= 10f);
-            if (!inputManager.InteractHold())
+            if (textDelaySeconds != 0f)
             {
                 yield return new WaitForSeconds(textDelaySeconds);
+                yield return null;
             }
             else
             {
-                Debug.Log("Holding e");
-                yield return new WaitForSeconds(textDelaySeconds/10);
+                yield return new WaitForEndOfFrame();
+                yield return null;
             }
-            
-            
         }
+
+        textDelaySeconds = defaultDelay;
         writing = false;
     }
 }

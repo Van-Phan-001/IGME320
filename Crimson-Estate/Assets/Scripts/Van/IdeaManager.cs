@@ -86,8 +86,9 @@ public class IdeaManager : MonoBehaviour
     /// </summary>
     public void CreateIdea(string a_sIdeaName = "Default")
     {
-        if (createdIdeas.ContainsKey(a_sIdeaName) == false) // If the object doesn't already exist 
+        if (createdIdeas.ContainsKey(a_sIdeaName) == false && dr.Responses.ContainsKey(a_sIdeaName)) // If the object doesn't already exist 
         {
+            // NOTE: Set base description Here
             Debug.Log($"Created {a_sIdeaName}");
             GameObject newObj = Instantiate(objPrefab, this.transform);
             createdIdeas.Add(a_sIdeaName, newObj);
@@ -101,7 +102,10 @@ public class IdeaManager : MonoBehaviour
     public void CreateIdea(string a_sIdea, string a_sIdea2)
     {
         //If our combo exist, we retrieve that combo from our combinations dictionary and create it
-        if (CheckCombo(a_sIdea, a_sIdea2)) CreateIdea(combinations[a_sIdea + a_sIdea2]);
+        if (CheckCombo(a_sIdea, a_sIdea2)) 
+        {
+            CreateIdea(combinations[a_sIdea + a_sIdea2]);
+        }
         else Debug.Log("Combo not valid");
     }
 
@@ -122,5 +126,16 @@ public class IdeaManager : MonoBehaviour
     public bool IdeaInBrain(string a_sIdeaName)
     {
         return createdIdeas.ContainsKey(a_sIdeaName);
+    }
+    /// <summary>
+    /// Updates an existing idea
+    /// </summary>
+    public void UpdateIdea(string a_sIdeaName)
+    {
+        if (IdeaInBrain(a_sIdeaName)){
+            // UPDATE THE IDEA WITH ITS SECOND DESCRIPTION
+            // change color of ui sprite
+            // dr.Responses[a_sIdeaName][1]
+        }
     }
 }

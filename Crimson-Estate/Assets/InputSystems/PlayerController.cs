@@ -3,6 +3,8 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
+    public DialogueReader objDialogue;
+
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -77,14 +79,14 @@ public class PlayerController : MonoBehaviour
         if (inputManager.Interact())
         {
             RaycastHit hit;
-            if (!dialogue.Writing)
+            if (!dialogue.Writing && !dialogue.InDialogue)
             {
                 if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, interactRange) && hit.transform != this.transform)
                 {
                     try
                     {
                         string curr = null;
-                        DialogueReader objDialogue = hit.transform.GetComponent<DialogueReader>();
+                        objDialogue = hit.transform.GetComponent<DialogueReader>();
                         if (objDialogue.Responses.ContainsKey(raycastManager.currentAction)) //if the current action is an action available for our obj
                         {
                             //this assigns the dialogue system to use this new series of text
@@ -122,7 +124,19 @@ public class PlayerController : MonoBehaviour
                     }
                 }
             }
-            
+            if (dialogue.InDialogue)
+            {
+                if (!dialogue.Writing)
+                {
+                    dialogue.PrintSentence();
+                    commands.NextCommand();
+                }
+                else
+                {
+                    dialogue.ChangePrintSpeed(0f);
+                }
+            }
+
         }
         if (inputManager.InteractHold()) Debug.Log("Holding main");
         //When player opens the inventory
@@ -132,18 +146,18 @@ public class PlayerController : MonoBehaviour
             if(!dialogue.Writing) interactionBrain.SwitchBrainState();
 
         }
-
-        if (inputManager.Next())
-        {
-            if(uiCreated)
-            {
-                if (!dialogue.Writing)
-                {
-                    dialogue.PrintSentence();
-                    commands.NextCommand();
-                }
-            }
-        }
+        //*
+        //if (inputManager.Next())
+        //{
+        //    if(uiCreated)
+        //    {
+        //        if (!dialogue.Writing)
+        //        {
+        //            dialogue.PrintSentence();
+        //            commands.NextCommand();
+        //        }
+        //    }
+        //}
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);

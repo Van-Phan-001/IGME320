@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Commands : MonoBehaviour
 {
+    private IdeaManager id;
     private Dictionary<int, string[]> commands;
+    [SerializeField] private Dialogue dialogue;
     int index = 0;
     private bool commandsDone = false; 
     // Start is called before the first frame update
@@ -25,6 +27,7 @@ public class Commands : MonoBehaviour
     /// </summary>
     public void NextCommand()
     {
+        id = FindObjectOfType<IdeaManager>();
         try
         {
             if (commandsDone) return;
@@ -32,16 +35,21 @@ public class Commands : MonoBehaviour
             switch (command)
             {
                 case "GiveIdea": //Adds this idea to the mind palace
+                    id.CreateIdea(commands[index][1]);
                     Debug.Log($"Giving idea: {commands[index][1]}");
                     break;
                 case "UpdateIdea": //Updates the respective idea
+                    id.UpdateIdea(commands[index][1]);
                     Debug.Log($"Updating idea: {commands[index][1]}");
                     break;
                 case "SwitchTo": //Switches the image in dialogue to whoever is currently speaking
                     Debug.Log($"Switch to:  {commands[index][1]}");
+                    dialogue.AssignImage(commands[index][1]);
                     break;
                 case "Introduced": //Sets introduced to true for the obj we're talking to
-                    Debug.Log("Introduced");
+                    DialogueReader dr = FindObjectOfType<PlayerController>().objDialogue;
+                    dr.hasIntroduced = true;
+                    Debug.Log("Current Dialogue has introduced themself!");
                     break;
                 case "Suggest": //Displays a suggestion on the top right of screen
                     Debug.Log($"Suggesting: {commands[index][1]}");
