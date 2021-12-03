@@ -726,6 +726,82 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -1112
       objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: sprites.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 35eccb645d2f5484dac85b093301e0a0, type: 3}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4c554f339d7fcfa488b4c12eb1d402a8, type: 3}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: sprites.Array.data[3]
+      value: 
+      objectReference: {fileID: 21300000, guid: b5b5fa8a9a481064b871b7574a154a97, type: 3}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: sprites.Array.data[4]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8387039defe58ea49ac4dbbf3b803d53, type: 3}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: sprites.Array.data[5]
+      value: 
+      objectReference: {fileID: 21300000, guid: 4ae8fa26c5ba60a499c69025b098c590, type: 3}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: sprites.Array.data[6]
+      value: 
+      objectReference: {fileID: 21300000, guid: 730278a1472569f44a93a2bd0f9d78ac, type: 3}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: sprites.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: 8e25e2649bb9b6d409c3d9da9aa4e813, type: 3}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: sprites.Array.data[8]
+      value: 
+      objectReference: {fileID: 21300000, guid: 9a05c71b0a410524ea56b1ad79ede2d5, type: 3}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: sprites.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 2cfe55fd373b3bf4398616a9c347e19c, type: 3}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: spritesIDs.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: spritesIDs.Array.data[2]
+      value: Barbara
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: spritesIDs.Array.data[3]
+      value: Billy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: spritesIDs.Array.data[4]
+      value: Casey
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: spritesIDs.Array.data[5]
+      value: Don
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: spritesIDs.Array.data[6]
+      value: Dresden
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: spritesIDs.Array.data[7]
+      value: Eddie
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: spritesIDs.Array.data[8]
+      value: Sam
+      objectReference: {fileID: 0}
+    - target: {fileID: 7849559384693960351, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
+      propertyPath: spritesIDs.Array.data[9]
+      value: Sherry
+      objectReference: {fileID: 0}
     - target: {fileID: 8018404016741825743, guid: 3ac3260edbaf6d241bc400dd82ffbae8, type: 3}
       propertyPath: raycastManager
       value: 
@@ -844,6 +920,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4090470385243320710, guid: ef6c51f2f3400f4409a1c65828741941, type: 3}
+      propertyPath: dialogue
+      value: 
+      objectReference: {fileID: 748959794}
     - target: {fileID: 4090470385243320711, guid: ef6c51f2f3400f4409a1c65828741941, type: 3}
       propertyPath: dragIn
       value: 
