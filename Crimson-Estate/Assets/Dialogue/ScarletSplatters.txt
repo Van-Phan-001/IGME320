@@ -1,0 +1,11 @@
+introduction {
+	/SwitchTo Dresden
+	What is this red liquid?
+	/GiveIdea scarletSplatters
+	This doesn't seem good.
+}
+
+filler {
+	/SwitchTo Dresden
+	What could this be?
+}

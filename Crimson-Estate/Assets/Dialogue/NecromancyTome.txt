@@ -1,0 +1,11 @@
+introduction {
+	/SwitchTo Dresden
+	Is this a tome of necromancy?
+	/GiveIdea necromancyTome
+	This can't be good. Why does Casey have this?
+}
+
+filler {
+	/SwitchTo Dresden
+	How could Casey have gotten this?
+}
