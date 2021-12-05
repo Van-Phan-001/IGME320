@@ -26,6 +26,7 @@ public class IdeaManager : MonoBehaviour
 
     private DialogueReader dr;
 
+    AudioManager am;
     #region Singleton definition
     private static IdeaManager _instance;
     public static IdeaManager Instance { get { return _instance; } }
@@ -47,6 +48,7 @@ public class IdeaManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        am = AudioManager.Instance;
         dr = GetComponent<DialogueReader>();
         // ----------Instatiate objects -----------------
         combinations = new Dictionary<string, string>();
@@ -121,11 +123,16 @@ public class IdeaManager : MonoBehaviour
     public void CreateIdea(string a_sIdea, string a_sIdea2)
     {
         //If our combo exist, we retrieve that combo from our combinations dictionary and create it
-        if (CheckCombo(a_sIdea, a_sIdea2)) 
+        if (CheckCombo(a_sIdea, a_sIdea2))
         {
+            am.PlaySound("YesCombo");
             CreateIdea(combinations[a_sIdea + a_sIdea2]);
         }
-        else Debug.Log("Combo not valid");
+        else
+        {
+            am.PlaySound("NoCombo");
+            Debug.Log("Combo not valid");
+        }
     }
 
     /// <summary>

@@ -13,8 +13,8 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerEnterHandler, IP
 
     private RectTransform draggingObj;
     private Vector3 velocity = Vector3.zero;
-    private bool isDragged = false; 
-
+    private bool isDragged = false;
+    AudioManager am = AudioManager.Instance;
 
     private IdeaManager ideaManager;
     private void Awake()
@@ -37,6 +37,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerEnterHandler, IP
         if(RectTransformUtility.ScreenPointToWorldPointInRectangle(draggingObj, eventData.position, eventData.pressEventCamera, out var globalMousePos))
         {
             //Debug.Log($"Dragging {isDragged}");
+            am.PlaySound("IdeaMove");
             isDragged = true;
             draggingObj.position = Vector3.SmoothDamp(draggingObj.position, globalMousePos, ref velocity, dampingSpeed);
         }
@@ -56,7 +57,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerEnterHandler, IP
     //Detect if the Cursor starts to pass over the GameObject
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
-        hoverImage.localPosition = new Vector3(74.7f, -31.9f, 0f);
+        hoverImage.localPosition = new Vector3(74.7f, -31.9f, -13f);
     }
 
     //Detect when Cursor leaves the GameObject

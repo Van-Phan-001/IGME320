@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
     private bool uiCreated = false;
 
     // NUMBER OF UNIQUE OBJECTS UNTIL WE START ENDING THE GAME
-    int numberOfIntros = 10;
+    int numberOfIntros = 13;
     int currentIntroCount = 0;
     private bool endingGame = false;
     
@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviour
         if (inputManager.Inventory())
         {
             //Debug.Log("Inventory clicked");
-            if(!dialogue.Writing) interactionBrain.SwitchBrainState();
+            if(!dialogue.InDialogue) interactionBrain.SwitchBrainState();
 
         }
         //*

@@ -53,6 +53,7 @@ public class Commands : MonoBehaviour
              switch (command)
             {
                 case "GiveIdea": //Adds this idea to the mind palace
+                    audioManager.PlaySound("GetIdea");
                     Debug.Log($"Giving idea: {commands[index][1]}");
                     if (!id.CreatedIdeas.ContainsKey("{commands[index][1]"))
                     {
@@ -75,6 +76,7 @@ public class Commands : MonoBehaviour
                     break;
                 case "Suggest": //Displays a suggestion on the top right of screen
                     Debug.Log($"Suggesting: {commands[index][1]}");
+                    audioManager.PlaySound("Suggestion");
                     string suggestion = commands[index][1].Replace("_", " ");
                     dialogue.Suggest(suggestion);
                     break;
@@ -115,6 +117,7 @@ public class Commands : MonoBehaviour
 
     public void GiveAccusation()
     {
+        audioManager.PlaySound("GetAccusation");
         id.CreateIdea("crimsonAccusation");
         dialogue.Suggest("You've gathered enough information... finish the job and accuse a suspect using the Crimson Accusation!");
     }
