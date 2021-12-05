@@ -59,10 +59,15 @@ public class SceneChanger : MonoBehaviour
     /// Pass in the delay in seconds then pass in either the string or int index
     /// of the desired scene for the game to go to
     /// </summary>
-    public void ToScene(float a_fDelay = 5.0f, string a_sSceneIndex = "MainMenu")
+    public void ToScene(float a_fDelay, string a_sSceneIndex = "MainMenu")
     {
         StartCoroutine(TransitionDelay(a_fDelay, a_sSceneIndex));
     }
+    public void ToTutorial()
+    {
+        StartCoroutine(TransitionDelay(2.0f, "TutorialSceneNew"));
+    }
+
     public void ToScene(float a_fDelay = 5.0f, int a_iSceneIndex = 0)
     {
         StartCoroutine(TransitionDelay(a_fDelay, a_iSceneIndex));

@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
     #region Fields
     [Header("List of sounds")]
     [SerializeField] private Sound[] sounds;
+    [SerializeField] private string onLoadAudio;
     #region Singleton definition
     private static AudioManager _instance;
     public static AudioManager Instance { get { return _instance; } }
@@ -34,6 +35,18 @@ public class AudioManager : MonoBehaviour
         }
     }
     #endregion
+
+    private void Start()
+    {
+        try
+        {
+            PlaySound(onLoadAudio);
+        }
+        catch
+        {
+            Debug.Log("No intial audio to play");
+        }
+    }
 
     private Dictionary<string,Sound> soundsDictionary = new Dictionary<string, Sound>();
     #endregion
