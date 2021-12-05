@@ -1,40 +1,66 @@
-tornPages {
-	Torn pages with arcane writing on them. What was Sherry up to?
-	Pages torn from a necromancy tome. With context, it appears as though it is a spell for transmuting blood to wine.
+metMaria {
+	You've 'met' Maria, the maid who has been killed.
 }
 
-bottleOfWine {
-	A nice bottle of Sunset Blush. Any wine fan would be happy to have some.
+metCasey {
+	You've met Casey, the morbid daughter of the family.
 }
 
-sherrysPurse {
-	Sherry’s purse. It may have useful information in it.
-	Sherry’s purse. I found some torn pages inside it, among other things.
+metEddie {
+	You've met Eddie, Casey's devoted boyfriend.
 }
 
-needleTool {
-	A sharp, pointed tool covered in red.
-	A sharp, pointed tool covered in red. Used to paint thin marks onto model trains.
+metSherry {
+	You've met Sherry, Barbara's alcoholic sister.
 }
 
-scarletSplatters {
-	Pools of red splattered across the room.
-	Pools of red paint that has been spilled across the room.
+spendingHabits {
+	Barbara seems to spend lots of money on importing peculiar animal blood.
 }
 
-bagsOfBlood {
-	Numerous bags of blood found in the kitchen pantry. They are labeled with various animal names, like pig and cow. One of the bags is unlabeled.
-	Numerous bags of blood found in the kitchen pantry. One of the bags is unlabeled, which is filled with expensive blood from overseas.
+fiveOClock {
+	It's always 5 O' Clock somewhere.
+}
+
+wineTime {
+	Sherry is currently distracted by wine.
+}
+
+roseAlchemy {
+	Sherry seems to have some interest in transmuting human blood.
+}
+
+friendlyRelationship {
+	Maria and Barbara seemed to be very close before she passed.
+}
+
+rockyRelationship {
+	Maria and Don did not seem to get along very well.
+}
+
+conflictingRelationships {
+	Barbara and Don appear to have staggeringly different opinions on Maria.
+}
+
+crimsonLetter {
+	Don believes that Maria and Barbara may have had an affair.
 }
 
 necromancyTome {
-	A tattered tome that teaches one of the dark craft of necromancy. A few pages seem to be missing.
-	A tattered tome that teaches one of the dark craft of necromancy. A few pages seem to be missing. Given to Casey by Eddie.
+	Casey has been studying necromancy. That isn’t something that should be in a regular human’s hands.
+}
+
+birthdayGift {
+	The tome was a birthday present from Eddie.
 }
 
 Sample {
 	This is the description of the object, on one line.
 	This is the "upgraded" description, on one line.
+}
+metEddie {
+	I talked to Eddie. What a strange young man!
+
 }
 Combos {
 	Something
@@ -43,4 +69,7 @@ Combos {
 	A Rock
 	Some Keys
 	Eviction Notice
+	friendlyRelationship
+	rockyRelationship
+	conflictingRelationships
 }

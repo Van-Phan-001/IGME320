@@ -9,6 +9,7 @@ public class IdeaManager : MonoBehaviour
     /// </summary>
     [SerializeField] private GameObject objPrefab;
 
+
     /// <summary>
     /// Dictionary used to check valid combos
     /// Combos must be added both directions
@@ -90,9 +91,15 @@ public class IdeaManager : MonoBehaviour
         {
             // NOTE: Set base description Here
             Debug.Log($"Created {a_sIdeaName}");
+            /*
             GameObject newObj = Instantiate(objPrefab, this.transform);
+            // set the parent
+
+            GameObject cloud = GameObject.FindWithTag("Cloud");
+            newObj.transform.SetParent(cloud.transform);
             createdIdeas.Add(a_sIdeaName, newObj);
             newObj.name = a_sIdeaName;
+            */
         }
     }
 
