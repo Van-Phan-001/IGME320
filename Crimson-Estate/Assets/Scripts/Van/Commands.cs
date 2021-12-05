@@ -10,12 +10,15 @@ public class Commands : MonoBehaviour
     [SerializeField] private Animator gateAnimator;
 
     private SceneChanger sceneChanger;
+    private AudioManager audioManager;
+
     int index = 0;
     private bool commandsDone = false; 
     // Start is called before the first frame update
     void Start()
     {
         sceneChanger = SceneChanger.Instance;
+        audioManager = AudioManager.Instance;
         commands = new Dictionary<int, string[]>();
     }
 
@@ -89,6 +92,7 @@ public class Commands : MonoBehaviour
     IEnumerator GateAnimateSceneLoad()
     {
         gateAnimator.SetTrigger("OpenGate");
+        audioManager.PlaySound("OpenGate");
         yield return new WaitForSeconds(3.0f);
         sceneChanger.ToScene(.5f,"MenuScene");
     }
