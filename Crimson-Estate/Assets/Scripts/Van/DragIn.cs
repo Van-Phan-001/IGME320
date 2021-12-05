@@ -12,11 +12,18 @@ public class DragIn : MonoBehaviour
         
         if (collision.name != "OnHover")
         {
-            string action = collision.name;
-            raycastManager.currentAction = action;
-            text.text = action;
-            showInHand.text = action;
+            string action = collision.name; //this just says default
+            raycastManager.currentAction = action; //This becomes two quotes
+            text.text = action; //this says default
+            showInHand.text = action; //this just says default
         }
+    }
+
+    public void SetDefault()
+    {
+        raycastManager.currentAction = ""; //This becomes two quotes
+        text.text = "Default"; //this says default
+        showInHand.text = "Default"; //this just says default
     }
 
 }
