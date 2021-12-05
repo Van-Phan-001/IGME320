@@ -7,11 +7,15 @@ public class Commands : MonoBehaviour
     private IdeaManager id;
     private Dictionary<int, string[]> commands;
     [SerializeField] private Dialogue dialogue;
+    [SerializeField] private Animator gateAnimator;
+
+    private SceneChanger sceneChanger;
     int index = 0;
     private bool commandsDone = false; 
     // Start is called before the first frame update
     void Start()
     {
+        sceneChanger = SceneChanger.Instance;
         commands = new Dictionary<int, string[]>();
     }
 
@@ -53,9 +57,11 @@ public class Commands : MonoBehaviour
                     break;
                 case "Suggest": //Displays a suggestion on the top right of screen
                     Debug.Log($"Suggesting: {commands[index][1]}");
+                    dialogue.Suggest(commands[index][1]);
                     break;
                 case "OpenDoor": //Open door animation plus go into next scene after a while
                     Debug.Log("Opening door");
+                    OpenGates();
                     break;
                 default: //Runs filler text dialogue if there is any
                     Debug.Log($"Command: {commands[index][0]}");
@@ -75,9 +81,21 @@ public class Commands : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OpenGates()
     {
-        
+        StartCoroutine(GateAnimateSceneLoad());
     }
+
+    IEnumerator GateAnimateSceneLoad()
+    {
+        gateAnimator.SetTrigger("OpenGate");
+        yield return new WaitForSeconds(3.0f);
+        sceneChanger.ToScene(.5f,"MenuScene");
+    }
+
+
+
+
 }
+
+
