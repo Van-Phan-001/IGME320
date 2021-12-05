@@ -16,6 +16,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private List<string> spritesIDs;
     [SerializeField] private Sprite defaultImage;
     [SerializeField] private Animator animator;
+    [SerializeField] private Text suggestText;
 
     //-------------------------------------------------------------
 
@@ -74,6 +75,11 @@ public class Dialogue : MonoBehaviour
     {
         if (objImages.ContainsKey(a_sImageName)) image.sprite = objImages[a_sImageName]; //if our dictionary has the requested image, assign it into the profile pic
         else image.sprite = defaultImage;
+    }
+
+    public void Suggest(string a_sImageName)
+    {
+
     }
 
     /// <summary>
