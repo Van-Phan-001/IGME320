@@ -63,7 +63,7 @@ public class Commands : MonoBehaviour
             }
             index++;
             index = Mathf.Clamp(index, 0, commands.Count - 1);
-            if(index == commands.Count - 1)
+            if(index == commands.Count)
             {
                 commandsDone = true;
             }
