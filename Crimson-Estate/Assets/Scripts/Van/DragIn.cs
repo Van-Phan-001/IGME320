@@ -9,10 +9,14 @@ public class DragIn : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        string action = collision.name;
-        raycastManager.currentAction = action;
-        text.text = action;
-        showInHand.text = action;
+        
+        if (collision.name != "OnHover")
+        {
+            string action = collision.name;
+            raycastManager.currentAction = action;
+            text.text = action;
+            showInHand.text = action;
+        }
     }
 
 }

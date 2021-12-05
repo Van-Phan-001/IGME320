@@ -32,7 +32,7 @@ public class Commands : MonoBehaviour
         {
             if (commandsDone) return;
             string command = commands[index][0]; //The first string in our string index is a command
-            switch (command)
+             switch (command)
             {
                 case "GiveIdea": //Adds this idea to the mind palace
                     Debug.Log($"Giving idea: {commands[index][1]}");
@@ -62,7 +62,6 @@ public class Commands : MonoBehaviour
                     break;
             }
             index++;
-            index = Mathf.Clamp(index, 0, commands.Count - 1);
             if(index == commands.Count)
             {
                 commandsDone = true;
@@ -71,6 +70,7 @@ public class Commands : MonoBehaviour
         catch
         {
             Debug.Log("No command");
+            index++;
         }
         
     }
