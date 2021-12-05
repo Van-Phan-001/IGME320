@@ -60,7 +60,8 @@ public class Commands : MonoBehaviour
                     break;
                 case "Suggest": //Displays a suggestion on the top right of screen
                     Debug.Log($"Suggesting: {commands[index][1]}");
-                    dialogue.Suggest(commands[index][1]);
+                    string suggestion = commands[index][1].Replace("_", " ");
+                    dialogue.Suggest(suggestion);
                     break;
                 case "OpenDoor": //Open door animation plus go into next scene after a while
                     Debug.Log("Opening door");

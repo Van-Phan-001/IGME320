@@ -10,7 +10,6 @@ public class IdeaManager : MonoBehaviour
     /// </summary>
     [SerializeField] private GameObject objPrefab;
 
-
     /// <summary>
     /// Dictionary used to check valid combos
     /// Combos must be added both directions
@@ -41,6 +40,7 @@ public class IdeaManager : MonoBehaviour
         }
     }
     #endregion
+
 
     // Start is called before the first frame update
     void Start()
@@ -149,10 +149,9 @@ public class IdeaManager : MonoBehaviour
     /// </summary>
     public void UpdateIdea(string a_sIdeaName)
     {
+        // updates idea
         if (IdeaInBrain(a_sIdeaName)){
-            // UPDATE THE IDEA WITH ITS SECOND DESCRIPTION
-            // change color of ui sprite
-            // dr.Responses[a_sIdeaName][1]
+            createdIdeas[a_sIdeaName].GetComponent<DragAndDrop>().theHoverText.text = dr.Responses[a_sIdeaName][1];
         }
     }
     public void MoveIdeas()
