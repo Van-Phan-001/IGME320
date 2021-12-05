@@ -65,7 +65,11 @@ public class SceneChanger : MonoBehaviour
     }
     public void ToTutorial()
     {
-        StartCoroutine(TransitionDelay(2.0f, "TutorialSceneNew"));
+        StartCoroutine(TransitionDelay(1.0f, "TutorialSceneNew"));
+    }
+    public void ToMenu()
+    {
+        StartCoroutine(TransitionDelay(1.0f, "MenuScene"));
     }
 
     public void ToScene(float a_fDelay = 5.0f, int a_iSceneIndex = 0)
