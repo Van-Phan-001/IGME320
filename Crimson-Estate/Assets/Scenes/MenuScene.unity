@@ -535,8 +535,9 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: c60a9a92dd1de4734a3aa5ceda0b8e49, type: 3}
     volume: 0.5
     pitch: 1
-    loop: 0
+    loop: 1
     name: Menu
+  onLoadAudio: Menu
 --- !u!1 &1967161234
 GameObject:
   m_ObjectHideFlags: 0
