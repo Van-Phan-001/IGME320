@@ -54,6 +54,10 @@ public class Commands : MonoBehaviour
             {
                 case "GiveIdea": //Adds this idea to the mind palace
                     Debug.Log($"Giving idea: {commands[index][1]}");
+                    if (!id.CreatedIdeas.ContainsKey("{commands[index][1]"))
+                    {
+                        dialogue.Suggest("You just learned the idea: " + commands[index][1]);
+                    }
                     id.CreateIdea(commands[index][1]);
                     break;
                 case "UpdateIdea": //Updates the respective idea
@@ -105,8 +109,8 @@ public class Commands : MonoBehaviour
     {
         gateAnimator.SetTrigger("OpenGate");
         audioManager.PlaySound("OpenGate");
-        yield return new WaitForSeconds(3.0f);
-        sceneChanger.ToScene(.5f,"MenuScene");
+        yield return new WaitForSeconds(5.0f);
+        sceneChanger.ToScene(.5f,"GavinTesting");
     }
 
     public void GiveAccusation()

@@ -22,6 +22,8 @@ public class IdeaManager : MonoBehaviour
     /// </summary>
     private Dictionary<string, GameObject> createdIdeas;
 
+    public Dictionary<string, GameObject> CreatedIdeas { get { return createdIdeas; } }
+
     private DialogueReader dr;
 
     #region Singleton definition

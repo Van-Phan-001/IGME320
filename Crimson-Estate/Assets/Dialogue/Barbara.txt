@@ -61,7 +61,7 @@ metSherry {
 	This is an important batch, they have a rather... exotic origin.
 	/SwitchTo Dresden
 	("Speaking of blood"? Surely she doesn't mean...)
-	/Suggest("Check the kitchen pantry")
+	/Suggest Check_the_kitchen_pantry?
 	(...Well, I guess I should go check that out at some point.)
 }
 
@@ -84,7 +84,7 @@ bagsOfBlood {
 	And what, exactly, would be so terrible about someone finding out?
 	/SwitchTo Barbara
 	You heard me?!
-	/UpdateIdea("Bags of Blood")
+	/UpdateIdea bagsOfBlood
 	Please, just forget what I just said.
 }
 

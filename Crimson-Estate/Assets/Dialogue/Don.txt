@@ -8,7 +8,7 @@ introduction {
 	I haven't observed anything too dubious, but the state of the body is certainly something to stay cognizant of.
 	/SwitchTo Dresden
 	Thank you.
-	/Suggest("Check Maria's body")
+	/Suggest Check_Maria's_body_in_the_upstairs_bathroom
 	I'll be sure to stay mindfully aware of those transgressions.
 	/Introduced
 	I'll let you know when there are new updates.
@@ -57,7 +57,7 @@ needleTool {
 	Sounds useful.
 	/SwitchTo Don
 	It has been imported all the way from Brazil.
-	/UpdateIdea("Needle Tool")
+	/UpdateIdea needleTool
 	It is of the highest quality.
 }
 
@@ -67,7 +67,7 @@ scarletSplatters {
 	/SwitchTo Don
 	Oh that is quite simple, really. In anticipation of these festivities, I was spending some time in solitude painting my lovely model trains. 
 	Unfortunately, I jounced my desk and foolishly spilled some paint.
-	/UpdateIdea("Scarlet Splatters") 
+	/UpdateIdea scarletSplatters
 	Even more unfortunately, I did not have enough time to unsully my workspace prior to the guests' arrivals.
 	/SwitchTo Dresden
 	Wow, that really sounds like quite the mishap.
@@ -84,11 +84,10 @@ metCasey {
 	Why is she so... grim?
 	/SwitchTo Don
 	My dear has always been fascinated with the macabre, but I'm sure it's just a phase.
-	/Suggest("Check Casey's room")
+	/Suggest Check_Casey's_room
 	You should see her room! It is quite a sinister sight.
 	/SwitchTo Dresden
 	Thanks for the tip.
-	
 }
 
 metEddie {

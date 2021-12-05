@@ -85,5 +85,5 @@ crimsonAccusation {
 	/SwitchTo Sam
 	You're a damn bastard if you think I'm the one who killed Maria!
 	/SwitchTo Dresden
-	Oh no...
+	Uh oh...
 }

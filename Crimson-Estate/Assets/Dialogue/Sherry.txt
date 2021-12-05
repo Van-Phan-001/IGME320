@@ -37,7 +37,7 @@ metCasey {
 	I know she's my niece and all, but that girl is ghastly! I've seen her room once, and it nearly made me faint!
 	/SwitchTo Dresden
 	You sure it was the room and not your wine?
-	/Suggest("Check Casey's Room")
+	/Suggest Check_Casey's_Room
 }
 
 metEddie {
@@ -54,7 +54,7 @@ metEddie {
 }
 
 fiveOClock {
-	/SwitchToDresden
+	/SwitchTo Dresden
 	So Sherry, I found this and I thought I would give it to you since you've been so helpful.
 	/SwitchTo Sherry
 	Dennis, you just became my new favorite person!
