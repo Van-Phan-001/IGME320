@@ -48,10 +48,44 @@ crimsonLetter {
 
 necromancyTome {
 	Casey has been studying necromancy. That isn’t something that should be in a regular human’s hands.
+	A tattered tome that teaches one of the dark craft of necromancy. A few pages seem to be missing. Given to Casey by Eddie.
 }
 
 birthdayGift {
 	The tome was a birthday present from Eddie.
+}
+
+maidsBody {
+	It appears the maid’s body is very pale as if she has been drained of her blood. Upon further examination, two small marks appear on her neck.
+}
+
+tornPages {
+	Torn pages with arcane writing on them. What was Sherry up to?
+	Pages torn from a necromancy tome. With context, it appears as though it is a spell for transmuting blood to wine.
+}
+
+bottleOfWine {
+	A nice bottle of Sunset Blush. Any wine fan would be happy to have some.
+}
+
+sherrysPurse {
+	Sherry’s purse. It may have useful information in it.
+	Sherry’s purse. I found some torn pages inside it, among other things.
+}
+
+needleTool {
+	A sharp, pointed tool covered in red.
+	A sharp, pointed tool covered in red. Used to paint thin marks onto model trains.
+}
+
+scarletSplatters {
+	Pools of red splattered across the room.
+	Pools of red paint that has been spilled across the room.
+}
+
+bagsOfBlood {
+	Numerous bags of blood found in the kitchen pantry. They are labeled with various animal names, like pig and cow. One of the bags is unlabeled.
+	Numerous bags of blood found in the kitchen pantry. One of the bags is unlabeled, which is filled with expensive blood from overseas.
 }
 
 Sample {
