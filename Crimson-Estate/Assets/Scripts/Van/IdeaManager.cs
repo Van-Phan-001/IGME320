@@ -99,11 +99,11 @@ public class IdeaManager : MonoBehaviour
             
             newObj.transform.SetParent(cloud.transform);
 
-            newObj.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+            newObj.transform.localScale = new Vector3(2.8f, 2.8f, 2.8f);
 
             newObj.transform.localPosition = new Vector3(Random.Range(-800, 800), Random.Range(-50, 300), 0);
 
-            // newObj.GetComponent<DragAndDrop>().theHoverText.text = dr.Responses[a_sIdeaName][0];
+            newObj.GetComponent<DragAndDrop>().theHoverText.text = dr.Responses[a_sIdeaName][0];
 
 
             createdIdeas.Add(a_sIdeaName, newObj);
