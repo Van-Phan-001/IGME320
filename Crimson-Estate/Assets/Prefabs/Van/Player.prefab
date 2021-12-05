@@ -64,6 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92efc008a40386748b214857576de234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objDialogue: {fileID: 0}
   playerSpeed: 5
   jumpHeight: 1
   gravityValue: -9.81

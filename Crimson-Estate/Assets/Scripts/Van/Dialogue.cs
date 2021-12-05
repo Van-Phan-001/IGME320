@@ -27,6 +27,7 @@ public class Dialogue : MonoBehaviour
     private bool inDialogue = false;
     private float defaultDelay = .1f;
     private InputManager inputManager;
+    private AudioManager audioManager;
 
     public bool Writing { get { return writing; } }
     public bool InDialogue { get { return inDialogue; } }
@@ -36,17 +37,15 @@ public class Dialogue : MonoBehaviour
     private void Start()
     {
         inputManager = InputManager.Instance;
-        //if (text != null)
-        //{
-        //    text.text = string.Empty;
-        //    StartDialogue();
-        //}
+
+        
         responses = new List<string>() { "Just a couple sentences for testing. I made this sentence extra long to see how words wrap for my box.",
                                         $"I am the sentence index: {sentenceIndex}",
                                          "We are at the end!!!" };
 
         if(objImages == null) objImages = new Dictionary<string, Sprite>();
         AssignSpritesWithIDs();
+        audioManager = AudioManager.Instance;
     }
 
     /// <summary>
@@ -130,6 +129,7 @@ public class Dialogue : MonoBehaviour
     IEnumerator TypeLine()
     {
         writing = true;
+        audioManager.PlaySound("Talk");
         foreach (char c in sentence.ToCharArray())
         {
             text.text += c;
