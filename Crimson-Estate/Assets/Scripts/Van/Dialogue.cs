@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Animations;
+using TMPro;
 
 public class Dialogue : MonoBehaviour
 {
@@ -15,8 +16,9 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private List<Sprite> sprites;
     [SerializeField] private List<string> spritesIDs;
     [SerializeField] private Sprite defaultImage;
-    [SerializeField] private Animator animator;
-    [SerializeField] private Text suggestText;
+    [SerializeField] private Animator animatorDialogue;
+    [SerializeField] private Animator animatorSuggest;
+    [SerializeField] private TextMeshProUGUI suggestText;
 
     //-------------------------------------------------------------
 
@@ -33,6 +35,8 @@ public class Dialogue : MonoBehaviour
     public bool Writing { get { return writing; } }
     public bool InDialogue { get { return inDialogue; } }
     private bool speedUp = false;
+
+    private string suggestion;
 
 
     private void Start()
@@ -77,9 +81,17 @@ public class Dialogue : MonoBehaviour
         else image.sprite = defaultImage;
     }
 
-    public void Suggest(string a_sImageName)
+    public void Suggest(string a_sSuggestion)
     {
+        suggestText.text = a_sSuggestion;
+        StartCoroutine(SuggestSequence());
+    }
 
+    IEnumerator SuggestSequence()
+    {
+        animatorSuggest.SetTrigger("MoveOn");
+        yield return new WaitForSeconds(5.0f);
+        animatorSuggest.SetTrigger("MoveOff");
     }
 
     /// <summary>
@@ -89,7 +101,7 @@ public class Dialogue : MonoBehaviour
     {
         sentenceIndex = 0;
         responses = a_lReponses;
-        animator.SetTrigger("Open");
+        animatorDialogue.SetTrigger("Open");
         
     }
 
@@ -101,7 +113,7 @@ public class Dialogue : MonoBehaviour
         if (sentenceIndex > responses.Count - 1) //if we are at the end of our dialogue, in dialogue is false
         {
             inDialogue = false;
-            animator.SetTrigger("Close");
+            animatorDialogue.SetTrigger("Close");
             return;
         }
         else

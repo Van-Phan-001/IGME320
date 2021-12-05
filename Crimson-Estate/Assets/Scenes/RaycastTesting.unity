@@ -485,6 +485,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4106933199639566485, guid: 77fc30129b154144ba46c27160cf8023, type: 3}
+      propertyPath: sounds.Array.data[0].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5743562210698362848, guid: 77fc30129b154144ba46c27160cf8023, type: 3}
       propertyPath: raycastManager
       value: 
@@ -936,5 +940,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8920374728299897869, guid: ef6c51f2f3400f4409a1c65828741941, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ef6c51f2f3400f4409a1c65828741941, type: 3}
