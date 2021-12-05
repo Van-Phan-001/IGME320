@@ -11,12 +11,23 @@ public class Commands : MonoBehaviour
 
     private SceneChanger sceneChanger;
     private AudioManager audioManager;
+    InputManager ip;
 
     int index = 0;
-    private bool commandsDone = false; 
+    private bool commandsDone = false;
+
     // Start is called before the first frame update
+    public void Update()
+    {
+        if (ip.PlayerJumped())
+        {
+            GiveAccusation();
+        }
+    }
     void Start()
     {
+        ip = InputManager.Instance;
+        id = FindObjectOfType<IdeaManager>();
         sceneChanger = SceneChanger.Instance;
         audioManager = AudioManager.Instance;
         commands = new Dictionary<int, string[]>();
@@ -98,7 +109,11 @@ public class Commands : MonoBehaviour
         sceneChanger.ToScene(.5f,"MenuScene");
     }
 
-
+    public void GiveAccusation()
+    {
+        id.CreateIdea("crimsonAccusation");
+        dialogue.Suggest("You've gathered enough information... finish the job and accuse a suspect using the Crimson Accusation!");
+    }
 
 
 }

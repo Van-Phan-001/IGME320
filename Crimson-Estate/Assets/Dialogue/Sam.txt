@@ -80,3 +80,10 @@ filler {
 	/SwitchTo Sam
 	Ah, well. I'll tell you about it some other time then.
 }
+
+crimsonAccusation {
+	/SwitchTo Sam
+	You're a damn bastard if you think I'm the one who killed Maria!
+	/SwitchTo Dresden
+	Oh no...
+}

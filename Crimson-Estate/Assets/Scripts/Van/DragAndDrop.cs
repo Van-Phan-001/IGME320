@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -8,7 +9,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IPointerEnterHandler, IP
     [SerializeField][Range(0, 1.0f)] private float dampingSpeed = .05f; //applies a dampened delay to movement
     [SerializeField] private Text text;
     [SerializeField] private Transform hoverImage;
-    [SerializeField] public Text theHoverText;
+    [SerializeField] public TextMeshProUGUI theHoverText;
 
     private RectTransform draggingObj;
     private Vector3 velocity = Vector3.zero;

@@ -79,3 +79,9 @@ filler {
 	/SwitchTo Eddie
 	...Alright.
 }
+crimsonAccusation {
+	/SwitchTo Eddie
+	Pretty smart little hunter aren't you... but I'm not going anywhere!
+	/SwitchTo Dreden
+	Finally! Some action! Let's dance, vampire!
+}

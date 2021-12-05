@@ -11,7 +11,7 @@ public class DialogueReader : MonoBehaviour
     private Dictionary<int, string[]> commands;
 
     [Header("Name in dialogue folder")]
-    [SerializeField] private string fileName;
+    [SerializeField] public string fileName;
 
     [Header("Is this being used to read ideas from txt files?")]
     [SerializeField] private bool ideaReading;
