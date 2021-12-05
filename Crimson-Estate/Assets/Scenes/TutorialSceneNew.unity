@@ -5195,6 +5195,50 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3.158646
       objectReference: {fileID: 0}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: onLoadAudio
+      value: Forest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: sounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: sounds.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: f14e8bfdac498dd4f82766090b48e582, type: 3}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: sounds.Array.data[1].loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: sounds.Array.data[1].name
+      value: Forest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: sounds.Array.data[2].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 79e6baad2fd414b82a6d49ce1568d2e5, type: 3}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: sounds.Array.data[2].name
+      value: OpenGate
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: sounds.Array.data[1].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: sounds.Array.data[2].pitch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: sounds.Array.data[1].volume
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751347432442221380, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
+      propertyPath: sounds.Array.data[2].volume
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6529523374367362384, guid: afc3be6c283e8c04fa11d92b6eae4209, type: 3}
       propertyPath: m_RootOrder
       value: 21
