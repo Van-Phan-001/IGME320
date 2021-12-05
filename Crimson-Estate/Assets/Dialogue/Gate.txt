@@ -1,4 +1,4 @@
-tutorial {
+introduction {
 	/SwitchTo Dresden
 	Alright, I’m here. I was given a key to get into the mansion.
 	I should press TAB to open up that little mind palace of mine.
@@ -14,4 +14,10 @@ mansionKey {
 	/OpenDoor
 	Though I have to say, this place doesn’t seem to be too out of the ordinary.
 	It looks like there’s a party going on in there. I should probably blend in with the crowd to meet up with all of the residents of the mansion.
+}
+
+filler {
+	/SwitchTo Dresden
+	Right....I forgot I have a key. 
+	...Alright (Press tab and drag the key into your current actions)
 }

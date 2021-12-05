@@ -35,8 +35,8 @@ public class Commands : MonoBehaviour
             switch (command)
             {
                 case "GiveIdea": //Adds this idea to the mind palace
-                    id.CreateIdea(commands[index][1]);
                     Debug.Log($"Giving idea: {commands[index][1]}");
+                    id.CreateIdea(commands[index][1]);
                     break;
                 case "UpdateIdea": //Updates the respective idea
                     id.UpdateIdea(commands[index][1]);
@@ -70,7 +70,7 @@ public class Commands : MonoBehaviour
         }
         catch
         {
-            Debug.Log("Commands error");
+            Debug.Log("No command");
         }
         
     }
