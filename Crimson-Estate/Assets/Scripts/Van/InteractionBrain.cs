@@ -32,7 +32,7 @@ public class InteractionBrain : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        brainCanvas.SetActive(activeState);
+        brainCanvas.GetComponent<RectTransform>().localPosition = new Vector3(10000f, 0f, 0f);
     }
 
     /// <summary>
@@ -42,20 +42,18 @@ public class InteractionBrain : MonoBehaviour
     {
         activeStateDialogue = !activeStateDialogue;
         activeState = !activeState;
-        brainCanvas.SetActive(activeState);
-        dialogue.SetActive(activeStateDialogue);
+        //brainCanvas.SetActive(activeState);
+        //dialogue.SetActive(activeStateDialogue);
 
-        /*if (activeState)
-        {
-            brainCanvas.GetComponent<RectTransform>().localPosition = new Vector3(10000f, 0f, 0f);
-        }
-        if (activeStateDialogue)
+        if (activeState)
         {
             brainCanvas.GetComponent<RectTransform>().localPosition = new Vector3(0f, 0f, 0f);
         }
-        */
+        if (activeStateDialogue)
+        {
+            brainCanvas.GetComponent<RectTransform>().localPosition = new Vector3(10000f, 0f, 0f);
+        }
         
-
         //determines whether mouse free floats for inventory or locked in middle for player controls
         if (Cursor.lockState == CursorLockMode.Locked) Cursor.lockState = CursorLockMode.Confined;
         else if (Cursor.lockState == CursorLockMode.Confined) Cursor.lockState = CursorLockMode.Locked;

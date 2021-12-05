@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IdeaManager : MonoBehaviour
 {
@@ -91,15 +92,24 @@ public class IdeaManager : MonoBehaviour
         {
             // NOTE: Set base description Here
             Debug.Log($"Created {a_sIdeaName}");
-            /*
-            GameObject newObj = Instantiate(objPrefab, this.transform);
-            // set the parent
 
             GameObject cloud = GameObject.FindWithTag("Cloud");
+
+            GameObject newObj = Instantiate(objPrefab, this.transform);
+            
             newObj.transform.SetParent(cloud.transform);
+
+            newObj.transform.localScale = new Vector3(2.5f, 2.5f, 2.5f);
+
+            newObj.transform.localPosition = new Vector3(Random.Range(-800, 800), Random.Range(-50, 300), 0);
+
+            // newObj.GetComponent<DragAndDrop>().theHoverText.text = dr.Responses[a_sIdeaName][0];
+
+
             createdIdeas.Add(a_sIdeaName, newObj);
             newObj.name = a_sIdeaName;
-            */
+            newObj.GetComponentInChildren<Text>().text = a_sIdeaName;
+            
         }
     }
 
@@ -144,5 +154,9 @@ public class IdeaManager : MonoBehaviour
             // change color of ui sprite
             // dr.Responses[a_sIdeaName][1]
         }
+    }
+    public void MoveIdeas()
+    {
+        // this will move ideas to the ui parent
     }
 }

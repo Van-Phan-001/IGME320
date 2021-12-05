@@ -12,6 +12,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler
     private Vector3 velocity = Vector3.zero;
     private bool isDragged = false; 
 
+
     private IdeaManager ideaManager;
     private void Awake()
     {
