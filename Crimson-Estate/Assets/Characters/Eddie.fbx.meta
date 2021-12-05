@@ -6,7 +6,12 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: mixamo.com
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Ch42_Hair
+    second: {fileID: 2100008, guid: cdac80e1dd15a450f93408e7aa5be2f7, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
