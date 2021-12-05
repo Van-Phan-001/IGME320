@@ -1,0 +1,11 @@
+introduction {
+	/SwitchTo Dresden
+	Why would Barbara need bags of blood?
+	/GiveIdea bagsOfBlood
+	But even worse, whose blood is in here?
+}
+
+filler {
+	/SwitchTo Dresden
+	What - or whose - blood is this?
+}
