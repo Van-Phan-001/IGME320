@@ -1,0 +1,11 @@
+introduction {
+	/SwitchTo Dresden
+	A bottle of wine!
+	/GiveIdea bottleOfWine
+	I think I know who would like this...
+}
+
+filler {
+	/SwitchTo Dresden
+	Sherry would probably like this.
+}
