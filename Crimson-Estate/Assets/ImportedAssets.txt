@@ -1,9 +1,0 @@
-https://www.mixamo.com/#/
-https://assetstore.unity.com/publishers/45337
-https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116
-https://assetstore.unity.com/publishers/32893
-https://assetstore.unity.com/packages/audio/sound-fx/free-sound-effects-pack-155776
-https://assetstore.unity.com/packages/3d/props/exterior/low-poly-brick-houses-131899
-https://assetstore.unity.com/packages/3d/props/exterior/low-poly-pack-environment-lite-102039
-https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-simple-nature-pack-162153
-https://assetstore.unity.com/packages/2d/textures-materials/sky/customizable-skybox-174576
