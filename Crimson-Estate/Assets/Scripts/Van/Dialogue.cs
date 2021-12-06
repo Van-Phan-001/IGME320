@@ -153,7 +153,8 @@ public class Dialogue : MonoBehaviour
             text.text += c;
             if (textDelaySeconds != 0f)
             {
-                yield return new WaitForSeconds(textDelaySeconds);
+                //yield return new WaitForSeconds(textDelaySeconds);
+                yield return new WaitForFixedUpdate();
                 yield return null;
             }
             else
