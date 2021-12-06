@@ -63,6 +63,8 @@ public class Commands : MonoBehaviour
                     break;
                 case "UpdateIdea": //Updates the respective idea
                     id.UpdateIdea(commands[index][1]);
+                    audioManager.PlaySound("IdeaUpdated");
+                    dialogue.Suggest("Idea updated: " + commands[index][1]);
                     Debug.Log($"Updating idea: {commands[index][1]}");
                     break;
                 case "SwitchTo": //Switches the image in dialogue to whoever is currently speaking

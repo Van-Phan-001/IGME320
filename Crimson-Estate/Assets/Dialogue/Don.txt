@@ -52,12 +52,12 @@ needleTool {
 	Hey Don, I found this interesting object in your train room and I was wondering if you can tell me more about it.
 	/SwitchTo Don
 	Of course my dear detective! I use that tool to paint fine details onto my beloved trains. 
+	/UpdateIdea needleTool
 	Its thinness allows for precise strokes that I otherwise would not be able to achieve!
 	/SwitchTo Dresden
 	Sounds useful.
 	/SwitchTo Don
 	It has been imported all the way from Brazil.
-	/UpdateIdea needleTool
 	It is of the highest quality.
 }
 

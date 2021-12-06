@@ -160,6 +160,7 @@ public class IdeaManager : MonoBehaviour
     {
         // updates idea
         if (IdeaInBrain(a_sIdeaName)){
+            createdIdeas[a_sIdeaName].GetComponent<Image>().color = new Color(255f, 92f, 116f, 256f);
             createdIdeas[a_sIdeaName].GetComponent<DragAndDrop>().theHoverText.text = dr.Responses[a_sIdeaName][1];
         }
     }
