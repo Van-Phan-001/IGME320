@@ -65,3 +65,10 @@ filler {
 	/SwitchTo Casey
 	Leave me alone.
 }
+crimsonAccusation {
+	/SwitchTo Casey
+	You're blaming me because of how I look, right? Typical.
+	Get the hell out of here before I tell anyone else.
+	/SwitchTo Dresden
+	Shit...
+}

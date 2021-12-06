@@ -37,7 +37,7 @@ metCasey {
 	I know she's my niece and all, but that girl is ghastly! I've seen her room once, and it nearly made me faint!
 	/SwitchTo Dresden
 	You sure it was the room and not your wine?
-	/Suggest("Check Casey's Room")
+	/Suggest Check_Casey's_Room
 }
 
 metEddie {
@@ -53,8 +53,8 @@ metEddie {
 	Helpful as always.
 }
 
-fiveOClock {
-	/SwitchToDresden
+bottleOfWine {
+	/SwitchTo Dresden
 	So Sherry, I found this and I thought I would give it to you since you've been so helpful.
 	/SwitchTo Sherry
 	Dennis, you just became my new favorite person!
@@ -92,4 +92,11 @@ filler {
 	Would you like to have a drink?
 	/SwitchTo Dresden
 	I'll pass. I know better than to get in the way of a woman and her glass of wine.
+}
+
+crimsonAccusation {
+	/SwitchTo Sherry
+	You really think it's me? Ha! Just wait until the cops get here, creep!
+	/SwitchTo Dresden
+	Oh no...
 }

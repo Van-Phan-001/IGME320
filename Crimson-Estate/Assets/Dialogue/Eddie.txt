@@ -56,7 +56,7 @@ birthdayGift {
 	I dunno what to tell you dude, it's where I got it.
 	/SwitchTo Dresden
 	(Sigh)
-	/UpdateIdea("Necromancy Tome")
+	/UpdateIdea necromancyTome
 	Anyway, why did you think Casey would be interested in it?
 	/SwitchTo Eddie
 	She's really into creepy stuff like that.
@@ -78,4 +78,10 @@ filler {
 	Sorry, pal, you'll have to stay put until the investigation is over.
 	/SwitchTo Eddie
 	...Alright.
+}
+crimsonAccusation {
+	/SwitchTo Eddie
+	Pretty smart little hunter aren't you... but I'm not going anywhere!
+	/SwitchTo Dresden
+	Finally! Some action! Let's dance, vampire!
 }

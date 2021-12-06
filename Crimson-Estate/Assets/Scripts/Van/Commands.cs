@@ -11,12 +11,23 @@ public class Commands : MonoBehaviour
 
     private SceneChanger sceneChanger;
     private AudioManager audioManager;
+    InputManager ip;
 
     int index = 0;
-    private bool commandsDone = false; 
+    private bool commandsDone = false;
+
     // Start is called before the first frame update
+    public void Update()
+    {
+        if (ip.PlayerJumped())
+        {
+            GiveAccusation();
+        }
+    }
     void Start()
     {
+        ip = InputManager.Instance;
+        id = FindObjectOfType<IdeaManager>();
         sceneChanger = SceneChanger.Instance;
         audioManager = AudioManager.Instance;
         commands = new Dictionary<int, string[]>();
@@ -42,11 +53,18 @@ public class Commands : MonoBehaviour
              switch (command)
             {
                 case "GiveIdea": //Adds this idea to the mind palace
+                    audioManager.PlaySound("GetIdea");
                     Debug.Log($"Giving idea: {commands[index][1]}");
+                    if (!id.CreatedIdeas.ContainsKey("{commands[index][1]"))
+                    {
+                        dialogue.Suggest("You just learned the idea: " + commands[index][1]);
+                    }
                     id.CreateIdea(commands[index][1]);
                     break;
                 case "UpdateIdea": //Updates the respective idea
                     id.UpdateIdea(commands[index][1]);
+                    audioManager.PlaySound("IdeaUpdated");
+                    dialogue.Suggest("Idea updated: " + commands[index][1]);
                     Debug.Log($"Updating idea: {commands[index][1]}");
                     break;
                 case "SwitchTo": //Switches the image in dialogue to whoever is currently speaking
@@ -60,7 +78,9 @@ public class Commands : MonoBehaviour
                     break;
                 case "Suggest": //Displays a suggestion on the top right of screen
                     Debug.Log($"Suggesting: {commands[index][1]}");
-                    dialogue.Suggest(commands[index][1]);
+                    audioManager.PlaySound("Suggestion");
+                    string suggestion = commands[index][1].Replace("_", " ");
+                    dialogue.Suggest(suggestion);
                     break;
                 case "OpenDoor": //Open door animation plus go into next scene after a while
                     Debug.Log("Opening door");
@@ -93,11 +113,16 @@ public class Commands : MonoBehaviour
     {
         gateAnimator.SetTrigger("OpenGate");
         audioManager.PlaySound("OpenGate");
-        yield return new WaitForSeconds(3.0f);
-        sceneChanger.ToScene(.5f,"MenuScene");
+        yield return new WaitForSeconds(5.0f);
+        sceneChanger.ToScene(.5f,"GavinTesting");
     }
 
-
+    public void GiveAccusation()
+    {
+        audioManager.PlaySound("GetAccusation");
+        id.CreateIdea("crimsonAccusation");
+        dialogue.Suggest("You've gathered enough information... finish the job and accuse a suspect using the Crimson Accusation!");
+    }
 
 
 }

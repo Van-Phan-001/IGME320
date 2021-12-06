@@ -1,13 +1,11 @@
 introduction {
 	/SwitchTo Dresden
 	Alright, I’m here. I was given a key to get into the mansion.
-	/Suggest Wow thats a lot of words
-	test complete/
+	/Suggest An_absolute_ton_of_words._A_little_too_much_even._No_japanese_characters.
+	test complete
 	I should press TAB to open up that little mind palace of mine.
-	Whenever I get a new clue or idea, it’ll be stored within there, and I can drag ideas over each other to combine them.
+	Whenever I get a new clue or idea, it'l be stored within there, and I can drag ideas over each other to combine them.
 	I can also choose a piece of information to hold on to that I can use to interact with the environment.
-	/GiveIdea mansionKey
-	Well, let’s get going.
 }
 
 mansionKey {
