@@ -10,6 +10,7 @@ public class IdeaManager : MonoBehaviour
     /// </summary>
     [SerializeField] private GameObject objPrefab;
 
+
     /// <summary>
     /// Dictionary used to check valid combos
     /// Combos must be added both directions
@@ -22,11 +23,8 @@ public class IdeaManager : MonoBehaviour
     /// </summary>
     private Dictionary<string, GameObject> createdIdeas;
 
-    public Dictionary<string, GameObject> CreatedIdeas { get { return createdIdeas; } }
-
     private DialogueReader dr;
 
-    AudioManager am;
     #region Singleton definition
     private static IdeaManager _instance;
     public static IdeaManager Instance { get { return _instance; } }
@@ -44,11 +42,9 @@ public class IdeaManager : MonoBehaviour
     }
     #endregion
 
-
     // Start is called before the first frame update
     void Start()
     {
-        am = AudioManager.Instance;
         dr = GetComponent<DialogueReader>();
         // ----------Instatiate objects -----------------
         combinations = new Dictionary<string, string>();
@@ -123,16 +119,11 @@ public class IdeaManager : MonoBehaviour
     public void CreateIdea(string a_sIdea, string a_sIdea2)
     {
         //If our combo exist, we retrieve that combo from our combinations dictionary and create it
-        if (CheckCombo(a_sIdea, a_sIdea2))
+        if (CheckCombo(a_sIdea, a_sIdea2)) 
         {
-            am.PlaySound("YesCombo");
             CreateIdea(combinations[a_sIdea + a_sIdea2]);
         }
-        else
-        {
-            am.PlaySound("NoCombo");
-            Debug.Log("Combo not valid");
-        }
+        else Debug.Log("Combo not valid");
     }
 
     /// <summary>
@@ -158,10 +149,10 @@ public class IdeaManager : MonoBehaviour
     /// </summary>
     public void UpdateIdea(string a_sIdeaName)
     {
-        // updates idea
         if (IdeaInBrain(a_sIdeaName)){
-            createdIdeas[a_sIdeaName].GetComponent<Image>().color = new Color(255f, 92f, 116f, 256f);
-            createdIdeas[a_sIdeaName].GetComponent<DragAndDrop>().theHoverText.text = dr.Responses[a_sIdeaName][1];
+            // UPDATE THE IDEA WITH ITS SECOND DESCRIPTION
+            // change color of ui sprite
+            // dr.Responses[a_sIdeaName][1]
         }
     }
     public void MoveIdeas()
