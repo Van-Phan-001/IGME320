@@ -24,12 +24,6 @@ public class PlayerController : MonoBehaviour
 
     private bool uiCreated = false;
 
-    // NUMBER OF UNIQUE OBJECTS UNTIL WE START ENDING THE GAME
-    int numberOfIntros = 13;
-    int currentIntroCount = 0;
-    private bool endingGame = false;
-    
-
     private void Start()
     {
         inputManager = InputManager.Instance;
@@ -60,22 +54,6 @@ public class PlayerController : MonoBehaviour
 
         if (!dialogue.InDialogue) //disable movement when in dialogue
         {
-            // check for end of game
-            if (endingGame)
-            {
-                SceneChanger sc = SceneChanger.Instance;
-                // check for who was accused
-                if (objDialogue.fileName == "Assets/Dialogue/Eddie.txt")
-                {
-                    // good ending
-                    sc.ToScene(0f, "GoodEnding");
-                }
-                else
-                {
-                    // bad ending
-                    sc.ToScene(0f, "BadEnding");
-                }
-            }
             // ---------------------- Movement logic --------------------------
             groundedPlayer = controller.isGrounded;
             if (groundedPlayer && playerVelocity.y < 0)
@@ -113,11 +91,6 @@ public class PlayerController : MonoBehaviour
                         {
                             //this assigns the dialogue system to use this new series of text
                             curr = raycastManager.currentAction;
-                            // if crimson, start end of game.
-                            if (raycastManager.currentAction == "crimsonAccusation")
-                            {
-                                endingGame = true;
-                            }
                         }
                         // if not, check for other cases
                         // introduction
@@ -125,12 +98,6 @@ public class PlayerController : MonoBehaviour
                         {
                             curr = "introduction";
                             objDialogue.hasIntroduced = true;
-                            // GIVING THE ACCUSATION
-                            if (currentIntroCount >= numberOfIntros)
-                            {
-                                commands.GiveAccusation();
-                            }
-                            else currentIntroCount++;
                         }
                         // default filler afterwards
                         else if (raycastManager.currentAction == "" && objDialogue.Responses.ContainsKey("filler") && objDialogue.hasIntroduced)
@@ -176,7 +143,7 @@ public class PlayerController : MonoBehaviour
         if (inputManager.Inventory())
         {
             //Debug.Log("Inventory clicked");
-            if(!dialogue.InDialogue) interactionBrain.SwitchBrainState();
+            if(!dialogue.Writing) interactionBrain.SwitchBrainState();
 
         }
         //*

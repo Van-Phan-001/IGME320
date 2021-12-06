@@ -61,7 +61,7 @@ metSherry {
 	This is an important batch, they have a rather... exotic origin.
 	/SwitchTo Dresden
 	("Speaking of blood"? Surely she doesn't mean...)
-	/Suggest Check_the_kitchen_pantry?
+	/Suggest("Check the kitchen pantry")
 	(...Well, I guess I should go check that out at some point.)
 }
 
@@ -84,7 +84,7 @@ bagsOfBlood {
 	And what, exactly, would be so terrible about someone finding out?
 	/SwitchTo Barbara
 	You heard me?!
-	/UpdateIdea bagsOfBlood
+	/UpdateIdea("Bags of Blood")
 	Please, just forget what I just said.
 }
 
@@ -138,11 +138,4 @@ filler {
 	Mr. Dresden! Would you like a cream puff? Maria, bring over some... oh dear, that's right, she's...
 	/SwitchTo Dresden
 	(I feel a bit sorry for her, but she isn't the sharpest knife in the drawer, is she?)
-}
-crimsonAccusation {
-	/SwitchTo Barbara
-	Me? Kill Maria? She meant so much to me...
-	You know what? Get out. Now. I can't believe you would say such a thing...
-	/SwitchTo Dresden
-	Ah, damn it...
 }

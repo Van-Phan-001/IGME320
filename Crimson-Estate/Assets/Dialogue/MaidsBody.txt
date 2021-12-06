@@ -1,7 +1,7 @@
 introduction {
 	/SwitchTo Dresden
 	This is the victim's body. It looks like she's been drained of her blood.
-	/GiveIdea metMaria
+	/GiveIdea maidsBody
 	There are also two small marks on her neck.
 }
 

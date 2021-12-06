@@ -28,7 +28,6 @@ wineTime {
 
 roseAlchemy {
 	Sherry seems to have some interest in transmuting human blood.
-	This line should never show up, here just for testing
 }
 
 friendlyRelationship {
@@ -97,9 +96,6 @@ mansionKey {
 	I've got the key to the mansion! I'll drag this into the box below to use it in the world!
 
 }
-crimsonAccusation {
-	Once I talk to someone using this, I'll accuse them of killing Maria. After that, there's no turning back...
-}
 Combos {
 	Something
 	Rather
@@ -110,7 +106,4 @@ Combos {
 	friendlyRelationship
 	rockyRelationship
 	conflictingRelationships
-	tornPages
-	necromancyTome
-	roseAlchemy
 }

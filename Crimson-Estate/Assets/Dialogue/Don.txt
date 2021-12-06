@@ -8,7 +8,7 @@ introduction {
 	I haven't observed anything too dubious, but the state of the body is certainly something to stay cognizant of.
 	/SwitchTo Dresden
 	Thank you.
-	/Suggest Check_Maria's_body_in_the_upstairs_bathroom
+	/Suggest("Check Maria's body")
 	I'll be sure to stay mindfully aware of those transgressions.
 	/Introduced
 	I'll let you know when there are new updates.
@@ -52,12 +52,12 @@ needleTool {
 	Hey Don, I found this interesting object in your train room and I was wondering if you can tell me more about it.
 	/SwitchTo Don
 	Of course my dear detective! I use that tool to paint fine details onto my beloved trains. 
-	/UpdateIdea needleTool
 	Its thinness allows for precise strokes that I otherwise would not be able to achieve!
 	/SwitchTo Dresden
 	Sounds useful.
 	/SwitchTo Don
 	It has been imported all the way from Brazil.
+	/UpdateIdea("Needle Tool")
 	It is of the highest quality.
 }
 
@@ -67,7 +67,7 @@ scarletSplatters {
 	/SwitchTo Don
 	Oh that is quite simple, really. In anticipation of these festivities, I was spending some time in solitude painting my lovely model trains. 
 	Unfortunately, I jounced my desk and foolishly spilled some paint.
-	/UpdateIdea scarletSplatters
+	/UpdateIdea("Scarlet Splatters") 
 	Even more unfortunately, I did not have enough time to unsully my workspace prior to the guests' arrivals.
 	/SwitchTo Dresden
 	Wow, that really sounds like quite the mishap.
@@ -84,10 +84,11 @@ metCasey {
 	Why is she so... grim?
 	/SwitchTo Don
 	My dear has always been fascinated with the macabre, but I'm sure it's just a phase.
-	/Suggest Check_Casey's_room
+	/Suggest("Check Casey's room")
 	You should see her room! It is quite a sinister sight.
 	/SwitchTo Dresden
 	Thanks for the tip.
+	
 }
 
 metEddie {
@@ -110,11 +111,4 @@ filler {
 	Any new updates?
 	/SwitchTo Dresden
 	I'm working on it.
-}
-crimsonAccusation {
-	/SwitchTo Don
-	Putting the blame on me, after all the help I've given you? 
-	See yourself out, your detective work has been a complete waste of my time.
-	/SwitchTo Dresden
-	Damn...
 }

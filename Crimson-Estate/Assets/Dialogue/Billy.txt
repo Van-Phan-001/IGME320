@@ -53,10 +53,3 @@ filler {
 	/SwitchTo Billy
 	Can I use the bathroom yet?
 }
-crimsonAccusation {
-	/SwitchTo Billy
-	Ahahaha! It would be reeeeeally cool if I did it!
-	But I didn't. Can I ride in your car though?
-	/SwitchTo Dresden
-	(What am I thinking?)
-}
