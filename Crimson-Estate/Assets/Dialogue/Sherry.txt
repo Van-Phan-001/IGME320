@@ -93,3 +93,10 @@ filler {
 	/SwitchTo Dresden
 	I'll pass. I know better than to get in the way of a woman and her glass of wine.
 }
+
+crimsonAccusation {
+	/SwitchTo Sherry
+	You really think it's me? Ha! Just wait until the cops get here, creep!
+	/SwitchTo Dresden
+	Oh no...
+}

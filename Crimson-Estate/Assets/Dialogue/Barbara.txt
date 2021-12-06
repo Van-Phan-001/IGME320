@@ -139,3 +139,10 @@ filler {
 	/SwitchTo Dresden
 	(I feel a bit sorry for her, but she isn't the sharpest knife in the drawer, is she?)
 }
+crimsonAccusation {
+	/SwitchTo Barbara
+	Me? Kill Maria? She meant so much to me...
+	You know what? Get out. Now. I can't believe you would say such a thing...
+	/SwitchTo Dresden
+	Ah, damn it...
+}

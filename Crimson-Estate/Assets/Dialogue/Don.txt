@@ -111,3 +111,10 @@ filler {
 	/SwitchTo Dresden
 	I'm working on it.
 }
+crimsonAccusation {
+	/SwitchTo Don
+	Putting the blame on me, after all the help I've given you? 
+	See yourself out, your detective work has been a complete waste of my time.
+	/SwitchTo Dresden
+	Damn...
+}
